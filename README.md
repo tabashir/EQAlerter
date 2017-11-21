@@ -1,11 +1,12 @@
-# EQAlerter
+# EQAlerter 'The EverQuest Alerter System'
 A Python based audio trigger alert system for EverQuest.  With Discord Bot support!
 
-Program Name: EQAlerter.py 
-              'The EverQuest Alerter'
 Author: Dr. Ronny Bull (A.K.A. Cubber on http://eqemultor.org)
+
 Python Version: 3.5
+
 Original Date: 11/12/2017
+
 Last Revision: 11/20/2017
 
 Purpose:  This program is intended to run on a Linux system running 'EverQuest' under 'Wine'.
@@ -16,8 +17,7 @@ Dependencies: Python 3.5 and CMU Flite text to speech engine
 	      Discord version requires discord.py library: 
               python3 -m pip install --user -U discord.py[voice]
 
-IMPORTANT: Verify that your 'eqclient.ini' file contains the following line: LOG=TRUE
-	     and that your game path is setup properly in Config.py.
+IMPORTANT: Verify that your 'eqclient.ini' file contains the following line: LOG=TRUE, and that your game path is setup properly in Config.py.
 
 # FAQ
 
