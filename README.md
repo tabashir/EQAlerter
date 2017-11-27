@@ -7,7 +7,7 @@ Python Version: 3.5
 
 Original Date: 11/12/2017
 
-Last Revision: 11/20/2017
+Last Revision: 11/27/2017
 
 Purpose:  This program is intended to run on a Linux system running 'EverQuest' under 'Wine'.
           When running the program will parse your EverQuest chat log file for key phrases
@@ -60,7 +60,8 @@ Q. What raid events are supported by EQAlerter?
 
 A. EQAlerter supports the following raid events: 
 
-	- RoF(Dispelling the Shadows - Plane of Shadow, Glimpse the Unseen - The Threshold, Ulrich the Ageless - The Threshold, Monarch Widow - The Threshold, An End to Fear - The Epicenter)
+	- RoF(A Matter of Life and Death - Chapterhouse, Dispelling the Shadows - Plane of Shadow, Glimpse the Unseen - The Threshold, Ulrich the Ageless - The Threshold, Monarch Widow - The Threshold, 
+		An End to Fear - The Epicenter)
 	- CoF(Bixie Warfront: Pelzias Plot, The Dead Hills: Xulous Prime, Neriak - Fourth Gate: Houses of Thex, Neriak - Fourth Gate: Hate Rising, Tower of Rot: Lord Kyle Bayle, Argin-Hiz: Burn Out, 
 		The Void (H): The Journey Home)
 	- TDS(Defense of the City, Principal Quastori Numicia, Praetor Vitio, Principal Vicarum Nomia)
@@ -74,3 +75,7 @@ Q. What other triggers are supported?
 
 A. All forms of invisibility dropping as well as feign death failures and breaks.
 
+
+Q. What is GuildChat-Discord.py?
+
+A. A stand-alone program created to relay guild chat messages from a character log file to a private guild chat channel on Discord.  
