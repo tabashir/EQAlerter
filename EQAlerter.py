@@ -111,6 +111,13 @@ try:
                 
                 ##### START RoF #####
                 
+                # A Matter of Life and Death - Chapterhouse
+                if (MARNEK1) in line:
+                    os.system('flite -voice slt -t "Marnek is in skeleton form, shrouded players DPS now"')
+
+                if (MARNEK2) in line:
+                    os.system('flite -voice slt -t "Corpse collector is dragging a corpse"')
+                
                 # Dispelling the Shadows - Plane of Shadow
                 if (SHADOW1) in line:
                     os.system('flite -voice slt -t "Group heal"')

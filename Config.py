@@ -14,12 +14,10 @@
 EQHOME = "<INSERT PATH TO EQ INSTALL DIRECTORY>"
 
 ## Discord specific settings - only needed if using Discord Bot version ##
-## Obtain via 'developer mode' in Discord and by right clicking on the channel, then choose copy id ##
 # general chat channel ID on discord server
 GENERAL_ID = '<INSERT DISCORD CHANNEL ID>'
 
 # Discord Bot TOKEN - DO NOT SHARE!
-# Obtained from your Discord applications page under your registered Bot for this application
 TOKEN = '<INSERT YOUR BOT TOKEN>'
 
 #### END OF USER DEFINED VARIABLES ####
@@ -30,6 +28,10 @@ TOKEN = '<INSERT YOUR BOT TOKEN>'
 # defaults adapted from: http://everquest.fanra.info/wiki/Raid_audio_triggers
 
 ##### START RoF #####
+# A Matter of Life and Death - Chapterhouse
+MARNEK1 = "Marnek enters the realm of the dead"
+MARNEK2 = "A Corpse Collector begins to drag"
+
 # Dispelling the Shadows - Plane of Shadow
 SHADOW1 = "You are struck by a pulse of"                    	# Signals the need for a group heal
 SHADOW2 = "points at "                            	        # Target DA or self DA and then stand right underneath Shadow of Luclin, She will perma-aggro this person even if DA and you can continue to DPS

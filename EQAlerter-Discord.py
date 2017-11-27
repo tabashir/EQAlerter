@@ -105,7 +105,7 @@ async def on_ready():
     print(client.user.name)
     print(client.user.id)
     print('----------')
-    await client.send_message(discord.Object(id=GENERAL_ID), 'Hello, my name is AlerterBot.  I am here to assist you during your raid today. Type !help for more info. To find out what events I support please type !raids', tts=True)
+    await client.send_message(discord.Object(id=GENERAL_ID), 'Hello, my name is AlerterBot.  I am here to assist you during your raid today. Type !help for more info. To find out what events I support please type !raids', tts=False)
 
 # some bot commands for testing and information
 @client.event
@@ -120,7 +120,7 @@ async def on_message(message):
    
     # bot info
     elif message.content.startswith('!who'):
-        await client.send_message(message.channel, 'Hello, my name is AlerterBot.  I am here to assist you during your adventures. My creator is Nuggethead.', tts=True)
+        await client.send_message(message.channel, 'Hello, my name is AlerterBot.  I am here to assist you during your adventures. My creator is Nuggethead.', tts=False)
 
     # help text
     elif message.content.startswith('!help'):
@@ -128,7 +128,7 @@ async def on_message(message):
 
     # TODO: supported raids
     elif message.content.startswith('!raids'):
-        await client.send_message(message.channel, 'I can provide support during the following raid events:\n - RoF(Dispelling the Shadows - Plane of Shadow, Glimpse the Unseen - The Threshold, Ulrich the Ageless - The Threshold, Monarch Widow - The Threshold, An End to Fear - The Epicenter)\n - CoF(Bixie Warfront: Pelzias Plot, The Dead Hills: Xulous Prime, Neriak - Fourth Gate: Houses of Thex, Neriak - Fourth Gate: Hate Rising, Tower of Rot: Lord Kyle Bayle, Argin-Hiz: Burn Out, The Void (H): The Journey Home)\n - TDS(Defense of the City, Principal Quastori Numicia, Praetor Vitio, Principal Vicarum Nomia)\n - TBM( Plane of Hate: Revisited - Maestro of Rancor & Innorukk, Anashti Sul - Lady of Life, Wither and Decay, Grannus of the Cleansing Steam, Stem the Tide, Grummus!, High Bokon Boromas, Anashti Sul - Enslaver of Souls)\n - EoK(Doorstep of War - Lceanium, The Summoning of Droga - Droga, Prince Selrach Dizok - Chardok, Queen Velazul Dizok - Chardok)\n - Anniversary(The Plane of War: 15th anniversary, 17th Anniversary raid - Hates Fury: Seventeen Pieces of Silver)', tts=False)
+        await client.send_message(message.channel, 'I can provide support during the following raid events:\n - RoF(A Matter of Life and Death - Chapterhouse, Dispelling the Shadows - Plane of Shadow, Glimpse the Unseen - The Threshold, Ulrich the Ageless - The Threshold, Monarch Widow - The Threshold, An End to Fear - The Epicenter)\n - CoF(Bixie Warfront: Pelzias Plot, The Dead Hills: Xulous Prime, Neriak - Fourth Gate: Houses of Thex, Neriak - Fourth Gate: Hate Rising, Tower of Rot: Lord Kyle Bayle, Argin-Hiz: Burn Out, The Void (H): The Journey Home)\n - TDS(Defense of the City, Principal Quastori Numicia, Praetor Vitio, Principal Vicarum Nomia)\n - TBM( Plane of Hate: Revisited - Maestro of Rancor & Innorukk, Anashti Sul - Lady of Life, Wither and Decay, Grannus of the Cleansing Steam, Stem the Tide, Grummus!, High Bokon Boromas, Anashti Sul - Enslaver of Souls)\n - EoK(Doorstep of War - Lceanium, The Summoning of Droga - Droga, Prince Selrach Dizok - Chardok, Queen Velazul Dizok - Chardok)\n - Anniversary(The Plane of War: 15th anniversary, 17th Anniversary raid - Hates Fury: Seventeen Pieces of Silver)', tts=False)
     
 # loop through log file
 @client.event
@@ -158,6 +158,17 @@ async def logfile_loop():
             if line:
 
                 ##### START RoF #####
+
+                # A Matter of Life and Death - Chapterhouse
+                # multiplayer - send to discord
+                if (MARNEK1) in line:
+                    await client.send_message(discord.Object(id=GENERAL_ID), 'Marnek is in skeleton form, shrouded players DPS now', tts=True)
+                    #os.system('flite -voice slt -t "Marnek is in skeleton form, shrouded players DPS now"')
+
+                # multiplayer - send to discord
+                if (MARNEK2) in line:
+                    await client.send_message(discord.Object(id=GENERAL_ID), 'Corpse collector is dragging a corpse', tts=True)
+                    #os.system('flite -voice slt -t "Corpse collector is dragging a corpse"')
                 
                 # Dispelling the Shadows - Plane of Shadow
                 # multiplayer - send to discord
