@@ -11,7 +11,7 @@
 #### USER DEFINED VARIABILES - CHANGE THE VALUES TO SUIT YOUR NEEDS ####
 
 # eq installation directory
-EQHOME = "<INSERT PATH TO EQ INSTALL DIRECTORY>"
+EQHOME = "<EQ Folder HERE>"
 
 ## Discord specific settings - only needed if using Discord Bot version ##
 # general chat channel ID on discord server
@@ -323,6 +323,12 @@ FALLEN = " has fallen to the ground"
 FDBROKEN = "You are no longer feigning death"
 FDRESIST = "The strength of your will allows you to resume feigning death"
 FDCLEAR =  "Your enemies have forgotten you"
+
+LONG_MEZ = " has been mesmerized"
+
+CHARMBREAK = " charm spell has worn off"
+
+ROOTBREAK = " root spell has worn off"
 
 ##### END GENERAL UTILITY #####
 

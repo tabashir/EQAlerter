@@ -36,6 +36,8 @@ import subprocess
 import time
 import sys
 import os
+import subprocess
+import shlex
 
 from os import listdir
 from os.path import isfile, join
@@ -86,7 +88,7 @@ CHARACTER = CHARLIST.getName(CHARNUM)
 SERVER = CHARLIST.getServer(CHARNUM)
 
 # generate logfile path
-LOGPATH = "Logs/eqlog_%s_%s.txt" % (CHARACTER, SERVER) 
+LOGPATH = "eqlog_%s_%s.txt" % (CHARACTER, SERVER) 
 LOGFILE = EQHOME+LOGPATH
 DepCheck.verifyLogFile(CHARACTER, LOGFILE)
 
@@ -96,12 +98,13 @@ try:
     # open log file
     with open(LOGFILE, 'r+') as f:
         # move to the end of the file
-        f.truncate()
+        f.readlines()
 
         # loop over each new line of the file in realtime and
         # act on keywords from chat messages parsed from logfile by calling 
         # the proper method from the corresponding class for the action
         while True:
+            time.sleep(0.1)
             line = f.readline()
             if line:
                 #print("DEBUG: "+line)
@@ -680,9 +683,15 @@ try:
                 # Feign death resist
                 if (FDRESIST) in line:
                     os.system('flite -voice slt -t "you resume feigning death"')
-                
+
+                # Mez Timers
+                if (LONG_MEZ) in line:
+                    command_line = 'urxvt -geometry 20x1 -bg red -fg white -title EQTimer -e perl ./StopWatchTest.py 25 "Long Mez Ending" 1'
+                    command_args = shlex.split(command_line)
+                    subprocess.Popen(command_args, close_fds=True)
+
                 ##### END GENERAL UTILITY ALERTS #####
-            
+
             # end outer if
 
         # end while
