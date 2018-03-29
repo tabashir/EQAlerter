@@ -92,6 +92,13 @@ LOGPATH = "eqlog_%s_%s.txt" % (CHARACTER, SERVER)
 LOGFILE = EQHOME+LOGPATH
 DepCheck.verifyLogFile(CHARACTER, LOGFILE)
 
+
+def background_task(time, message, name='EQT'):
+    command_line = 'urxvt -geometry 15x1 -bg red -fg white -title ' + name + ' -e perl ./StopWatchTest.py ' + str(time) + ' "' + message + '" 1'
+    command_args = shlex.split(command_line)
+    # sys.stdout.write("Command: " + command_line)
+    subprocess.Popen(command_args, close_fds=True)
+
 # begin parsing log file for triggers and perform actions
 try:
 
@@ -111,20 +118,20 @@ try:
 
                 #### PARSE FOR TRIGGERS AND GENERATE AUDIBLE ALERT ####
 
-                
+
                 ##### START RoF #####
-                
+
                 # A Matter of Life and Death - Chapterhouse
                 if (MARNEK1) in line:
                     os.system('flite -voice slt -t "Marnek is in skeleton form, shrouded players DPS now"')
 
                 if (MARNEK2) in line:
                     os.system('flite -voice slt -t "Corpse collector is dragging a corpse"')
-                
+
                 # Dispelling the Shadows - Plane of Shadow
                 if (SHADOW1) in line:
                     os.system('flite -voice slt -t "Group heal"')
-                
+
                 # single player
                 SHAD2CHAR = SHADOW2 + CHARACTER
                 if (SHAD2CHAR) in line:
@@ -134,15 +141,15 @@ try:
                 SHAD3CHAR = SHADOW3 + CHARACTER
                 if (SHAD3CHAR) in line:
                     os.system('flite -voice slt -t "Move away from the front"')
-                
+
                 # single player
                 SHAD4CHAR = SHADOW4 + CHARACTER
                 if (SHAD4CHAR) in line:
                     os.system('flite -voice slt -t "Move out of range"')
-               
+
                 if (SHADOW5) in line:
                     os.system('flite -voice slt -t "Back away from the mob A E incoming"')
-                
+
                 # single player
                 SHAD6CHAR = SHADOW6 + CHARACTER
                 if (SHAD6CHAR) in line:
@@ -667,6 +674,38 @@ try:
                 if (VISIBLE7) in line:
                     os.system('flite -voice slt -t "invis dropped"')
 
+                if (LOST_FOLLOW1) in line:
+                    os.system('flite -voice slt -t "Follow"')
+
+                if (LOST_FOLLOW2) in line:
+                    os.system('flite -voice slt -t "Follow"')
+
+                if (ALERT_HAIL) in line:
+                    os.system('flite -voice slt -t "Hail"')
+
+                if (INVITE) in line:
+                    os.system('flite -voice slt -t "Invite"')
+
+                if (ROOTBREAK1) in line:
+                    os.system('flite -voice slt -t "Root break"')
+
+                if (ROOTBREAK2) in line:
+                    os.system('flite -voice slt -t "Root break"')
+
+                if (MEZBREAK1) in line:
+                    os.system('flite -voice slt -t "Mez break"')
+
+                if (ENTHRALLBREAK1) in line:
+                    os.system('flite -voice slt -t "Mez break"')
+
+                if (ENTRANCEBREAK1) in line:
+                    os.system('flite -voice slt -t "Mez break"')
+
+                if (DAZZLEBREAK1) in line:
+                    os.system('flite -voice slt -t "Mez break"')
+
+                if (FASCINATEBREAK1) in line:
+                    os.system('flite -voice slt -t "Mez break"')
 
                 # Feign death failed
                 CHARFALL = CHARACTER + FALLEN
@@ -685,10 +724,20 @@ try:
                     os.system('flite -voice slt -t "you resume feigning death"')
 
                 # Mez Timers
-                if (LONG_MEZ) in line:
-                    command_line = 'urxvt -geometry 20x1 -bg red -fg white -title EQTimer -e perl ./StopWatchTest.py 25 "Long Mez Ending" 1'
-                    command_args = shlex.split(command_line)
-                    subprocess.Popen(command_args, close_fds=True)
+                if (MEZ) in line:
+                    background_task(19, 'Mez Warn', 'Mez')
+
+                if (FASCINATE) in line:
+                    background_task(31, 'Mez Warn', 'Fas')
+
+                if (ENTHRALL) in line:
+                    background_task(43, 'Enthrall Warn', 'Etl')
+
+                if (ENTRANCE) in line:
+                    background_task(67, 'Entrance Warn', 'Etc')
+
+                if (DAZZLE) in line:
+                    background_task(91, 'Dazzle Warn', 'Daz')
 
                 ##### END GENERAL UTILITY ALERTS #####
 

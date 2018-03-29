@@ -324,11 +324,29 @@ FDBROKEN = "You are no longer feigning death"
 FDRESIST = "The strength of your will allows you to resume feigning death"
 FDCLEAR =  "Your enemies have forgotten you"
 
-LONG_MEZ = " has been mesmerized"
+MEZ = "has been mesmerized"
+ENTHRALL = "has been enthralled"
+ENTRANCE = "has been entranced"
+DAZZLE = "has been dazzled"
+FASCINATE = "has been fascinated"
 
-CHARMBREAK = " charm spell has worn off"
+MEZBREAK1 = "no longer mesmerized"
+ENTHRALLBREAK1 = "no longer enthralled"
+ENTRANCEBREAK1 = "no longer entranced"
+DAZZLEBREAK1 = "no longer dazzled"
+FASCINATEBREAK1 = "no longer fascinated"
 
-ROOTBREAK = " root spell has worn off"
+
+CHARMBREAK = "Your charm spell has worn off"
+
+ROOTBREAK1 = "Root spell has worn off"
+ROOTBREAK2 = "Your Grasping Roots spell has worn off"
+
+ALERT_HAIL = 'Hail, '
+INVITE = ' invites you to join a'
+
+LOST_FOLLOW1 = 'canceling auto-follow'
+LOST_FOLLOW2 = 'You are no longer auto-following'
 
 ##### END GENERAL UTILITY #####
 
