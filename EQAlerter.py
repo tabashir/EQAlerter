@@ -94,7 +94,7 @@ DepCheck.verifyLogFile(CHARACTER, LOGFILE)
 
 
 def background_task(time, message, name='EQT'):
-    command_line = 'urxvt -geometry 15x1 -bg red -fg white -title ' + name + ' -e perl ./StopWatchTest.py ' + str(time) + ' "' + message + '" 1'
+    command_line = 'urxvt -iconic -geometry 15x1 -bg red -fg white -title ' + name + ' -e perl ./StopWatchTest.py ' + str(time) + ' "' + message + '" 1'
     command_args = shlex.split(command_line)
     # sys.stdout.write("Command: " + command_line)
     subprocess.Popen(command_args, close_fds=True)

@@ -13,7 +13,9 @@ def stopwatch ( duration = 2, alert_msg = "timer ended", granularity = 1 ):
         curr = time.time()
         time_since_screen_update = (curr-last)
         if time_since_screen_update > granularity:
-            sys.stdout.write( (fmt % (curr-start)) + ' / ' + str(int((duration))) + 's' )
+            time_to_run = int(duration) - int(curr-start)
+            sys.stdout.write( fmt % (time_to_run) + ' / ' + str(int((duration))) + 's' )
+            sys.stdout.write("\x1b]2;" + str(time_to_run) + "\x07")
             sys.stdout.flush()
             last = curr
         else:
