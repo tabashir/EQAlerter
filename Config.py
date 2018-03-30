@@ -336,7 +336,6 @@ ENTRANCEBREAK1 = "no longer entranced"
 DAZZLEBREAK1 = "no longer dazzled"
 FASCINATEBREAK1 = "no longer fascinated"
 
-
 CHARMBREAK = "Your charm spell has worn off"
 
 ROOTBREAK1 = "Root spell has worn off"
@@ -347,6 +346,30 @@ INVITE = ' invites you to join a'
 
 LOST_FOLLOW1 = 'canceling auto-follow'
 LOST_FOLLOW2 = 'You are no longer auto-following'
+
+DROPPED_ITEM1 = 'item has dropped to the ground'
+DROPPED_ITEM2 = 'item falls to the ground'
+DROPPED_ITEM3 = 'just dropped your'
+
+REAGENT_FAIL = 'are missing some required components'
+NO_MANA = 'Insufficient Mana to cast this spell'
+SPELL_RESIST = "target resisted the"
+SPELL_FIZZLE = "our spell fizzles"
+SPELL_INTERRUPT = "spell is interrupted"
+
+LORE_ITEM = 'already have that Lore Item on your person or in the bank'
+
+TELL_TO_IGNORE1 = "That'll be"
+TELL_TO_IGNORE2 = "I'll give you"
+TELL_TO_IGNORE3 = "Welcome to my bank"
+TELL_TO_IGNORE4 = "Come back soon!"
+TELL_TO_IGNORE5 = "A fine donation! You'll receive"
+TELL_TO_IGNORE6 = "We graciously accept your"
+TELL_TO_IGNORE7 = "I cannot accept your"
+TELL_TO_IGNORE8 = "You have increased your skill in"
+TELL_TO_IGNORE9 = "I am unable to wake"
+TELL_TO_IGNOREA = "Attacking"
+
 
 ##### END GENERAL UTILITY #####
 

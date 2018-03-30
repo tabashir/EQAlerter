@@ -675,10 +675,10 @@ try:
                     os.system('flite -voice slt -t "invis dropped"')
 
                 if (LOST_FOLLOW1) in line:
-                    os.system('flite -voice slt -t "Follow"')
+                    os.system('flite -voice slt -t "Follow fail"')
 
                 if (LOST_FOLLOW2) in line:
-                    os.system('flite -voice slt -t "Follow"')
+                    os.system('flite -voice slt -t "Follow fail"')
 
                 if (ALERT_HAIL) in line:
                     os.system('flite -voice slt -t "Hail"')
@@ -706,6 +706,58 @@ try:
 
                 if (FASCINATEBREAK1) in line:
                     os.system('flite -voice slt -t "Mez break"')
+
+                if (DROPPED_ITEM1) in line:
+                    os.system('flite -voice slt -t "Item Drop"')
+
+                if (DROPPED_ITEM2) in line:
+                    os.system('flite -voice slt -t "Item Drop"')
+
+                if (DROPPED_ITEM3) in line:
+                    os.system('flite -voice slt -t "Item Drop"')
+
+                if (LORE_ITEM) in line:
+                    os.system('flite -voice slt -t "Lore duplicate"')
+
+                if (REAGENT_FAIL) in line:
+                    os.system('flite -voice slt -t "Missing component"')
+
+                if (NO_MANA) in line:
+                    os.system('flite -voice slt -t "Out of Mana"')
+
+                if (SPELL_FIZZLE) in line:
+                    os.system('flite -voice slt -t "Fizzle"')
+
+                if (SPELL_RESIST) in line:
+                    os.system('flite -voice slt -t "Resist"')
+
+                if (SPELL_INTERRUPT) in line:
+                    os.system('flite -voice slt -t "Interrupted"')
+
+
+                if ('tells you,') in line:
+                    if (TELL_TO_IGNORE1) in line:
+                        continue
+                    if (TELL_TO_IGNORE2) in line:
+                        continue
+                    if (TELL_TO_IGNORE3) in line:
+                        continue
+                    if (TELL_TO_IGNORE4) in line:
+                        continue
+                    if (TELL_TO_IGNORE5) in line:
+                        continue
+                    if (TELL_TO_IGNORE6) in line:
+                        continue
+                    if (TELL_TO_IGNORE7) in line:
+                        continue
+                    if (TELL_TO_IGNORE8) in line:
+                        continue
+                    if (TELL_TO_IGNORE9) in line:
+                        continue
+                    if (TELL_TO_IGNOREA) in line:
+                        continue
+                    os.system('flite -voice slt -t "Tell"')
+
 
                 # Feign death failed
                 CHARFALL = CHARACTER + FALLEN
