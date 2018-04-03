@@ -336,6 +336,8 @@ ENTRANCEBREAK1 = "no longer entranced"
 DAZZLEBREAK1 = "no longer dazzled"
 FASCINATEBREAK1 = "no longer fascinated"
 
+GENERALBREAK = "spell has worn off"
+
 CHARMBREAK = "Your charm spell has worn off"
 
 ROOTBREAK1 = "Root spell has worn off"
