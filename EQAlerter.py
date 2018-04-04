@@ -96,8 +96,21 @@ DepCheck.verifyLogFile(CHARACTER, LOGFILE)
 def background_task(time, message, name='EQT'):
     command_line = 'urxvt -iconic -geometry 15x1 -bg red -fg white -title ' + name + ' -e perl ./StopWatchTest.py ' + str(time) + ' "' + message + '" 1'
     command_args = shlex.split(command_line)
-    # sys.stdout.write("Command: " + command_line)
     subprocess.Popen(command_args, close_fds=True)
+
+def gui_notify(message):
+    notify_line='notify-send --urgency low --expire-time=1000 --icon='+EQHOME+'EverQuest.ico '
+    command_line = notify_line + '"' + message + '"'
+    os.system(command_line)
+
+def audio_notify(message):
+    notify_line='flite -voice slt -t '
+    command_line = notify_line + '"' + message + '"'
+    os.system(command_line)
+
+def all_notify(message):
+    gui_notify(message)
+    audio_notify(message)
 
 # begin parsing log file for triggers and perform actions
 try:
@@ -769,123 +782,120 @@ try:
 
             # Invis dropped
             if (APPEARING) in line:
-                os.system('flite -voice slt -t "invis dropped"')
+                all_notify("Invisibility Drop")
                 continue
 
             if (VISIBLE1) in line:
-                os.system('flite -voice slt -t "invis dropped"')
+                all_notify("Invisibility Drop")
                 continue
 
             if (VISIBLE2) in line:
-                os.system('flite -voice slt -t "invis dropped"')
                 continue
 
             if (VISIBLE3) in line:
-                os.system('flite -voice slt -t "invis dropped"')
+                all_notify("Invisibility Drop")
                 continue
 
             if (VISIBLE4) in line:
-                os.system('flite -voice slt -t "invis dropped"')
+                all_notify("Invisibility Drop")
                 continue
 
             if (VISIBLE5) in line:
-                os.system('flite -voice slt -t "invis dropped"')
+                all_notify("Invisibility Drop")
                 continue
 
             if (VISIBLE6) in line:
-                os.system('flite -voice slt -t "invis dropped"')
                 continue
 
             if (VISIBLE7) in line:
-                os.system('flite -voice slt -t "invis dropped"')
+                all_notify("Invisibility Drop")
                 continue
 
             if (LOST_FOLLOW1) in line:
-                os.system('flite -voice slt -t "Follow fail"')
+                all_notify("Not Following")
                 continue
 
             if (LOST_FOLLOW2) in line:
-                os.system('flite -voice slt -t "Follow fail"')
+                all_notify("Not Following")
                 continue
 
             if (ALERT_HAIL) in line:
-                os.system('flite -voice slt -t "Hail"')
+                all_notify("Hail!")
                 continue
 
             if (INVITE) in line:
-                os.system('flite -voice slt -t "Invite"')
+                all_notify("Invite")
                 continue
 
             if (CHARMBREAK) in line:
-                os.system('flite -voice slt -t "Charm break"')
+                all_notify("Charm break")
                 continue
 
             if (ROOTBREAK1) in line:
-                os.system('flite -voice slt -t "Root break"')
+                all_notify("Root break")
                 continue
 
             if (ROOTBREAK2) in line:
-                os.system('flite -voice slt -t "Root break"')
+                all_notify("Root break")
                 continue
 
-            if (MEZBREAK1) in line:
-                os.system('flite -voice slt -t "Mez break"')
+                all_notify("Mez break")
                 continue
 
             if (ENTHRALLBREAK1) in line:
-                os.system('flite -voice slt -t "Mez break"')
+                all_notify("Mez break")
                 continue
 
             if (ENTRANCEBREAK1) in line:
-                os.system('flite -voice slt -t "Mez break"')
+                all_notify("Mez break")
                 continue
 
             if (DAZZLEBREAK1) in line:
-                os.system('flite -voice slt -t "Mez break"')
+                all_notify("Mez break")
                 continue
 
             if (FASCINATEBREAK1) in line:
-                os.system('flite -voice slt -t "Mez break"')
+                all_notify("Mez break")
                 continue
 
             if (GENERALBREAK) in line:
-                os.system('flite -voice slt -t "Spell"')
+                all_notify("Spell break")
                 continue
 
             if (DROPPED_ITEM1) in line:
-                os.system('flite -voice slt -t "Item Drop"')
+                all_notify("Item Drop")
                 continue
 
             if (DROPPED_ITEM2) in line:
-                os.system('flite -voice slt -t "Item Drop"')
+                all_notify("Item Drop")
                 continue
 
             if (DROPPED_ITEM3) in line:
-                os.system('flite -voice slt -t "Item Drop"')
+                all_notify("Item Drop")
                 continue
 
             if (LORE_ITEM) in line:
-                os.system('flite -voice slt -t "Lore duplicate"')
+                all_notify("Lore Dupe")
                 continue
 
             if (REAGENT_FAIL) in line:
-                os.system('flite -voice slt -t "Missing component"')
+                all_notify("Missing reagent")
                 continue
 
             if (NO_MANA) in line:
-                os.system('flite -voice slt -t "Out of Mana"')
+                all_notify("Out of Mana")
                 continue
 
             if (SPELL_FIZZLE) in line:
-                os.system('flite -voice slt -t "Fiz"')
+                all_notify("Fizzle")
                 continue
 
             if (SPELL_RESIST) in line:
-                os.system('flite -voice slt -t "Resist"')
+                all_notify("Resist")
                 continue
 
             if (SPELL_INTERRUPT) in line:
-                os.system('flite -voice slt -t "Interrupted"')
+                all_notify("Interrupted")
                 continue
 
 
@@ -910,7 +920,7 @@ try:
                     continue
                 if (TELL_TO_IGNOREA) in line:
                     continue
-                os.system('flite -voice slt -t "Tell"')
+                all_notify("Incoming Tell")
                 continue
 
 
