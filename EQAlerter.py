@@ -38,6 +38,7 @@ import sys
 import os
 import subprocess
 import shlex
+import yaml
 
 from os import listdir
 from os.path import isfile, join
@@ -46,6 +47,13 @@ from os.path import isfile, join
 from Config import *
 from DepCheck import *
 from CharacterList import *
+
+
+with open("alerts.yaml", 'r') as stream:
+    try:
+        alerts = yaml.load(stream)
+    except yaml.YAMLError as exc:
+        print(exc)
 
 #### MAIN PROGRAM ####
 
