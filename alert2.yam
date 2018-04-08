@@ -1,4 +1,4 @@
-# A Matter of Life and Death - Chapterhouse
+
 MARNEK1:
     os.system('flite -voice slt -t "Marnek is in skeleton form, shrouded players DPS now"')
 
@@ -7,24 +7,24 @@ MARNEK2:
     os.system('flite -voice slt -t "Corpse collector is dragging a corpse"')
 
 
-# Dispelling the Shadows - Plane of Shadow
+
 SHADOW1:
     os.system('flite -voice slt -t "Group heal"')
 
 
-# single player
+
 SHAD2CHAR = SHADOW2 + CHARACTER
 SHAD2CHAR:
     os.system('flite -voice slt -t "D, A, and get aggro"')
 
 
-# single player
+
 SHAD3CHAR = SHADOW3 + CHARACTER
 SHAD3CHAR:
     os.system('flite -voice slt -t "Move away from the front"')
 
 
-# single player
+
 SHAD4CHAR = SHADOW4 + CHARACTER
 SHAD4CHAR:
     os.system('flite -voice slt -t "Move out of range"')
@@ -34,7 +34,7 @@ SHADOW5:
     os.system('flite -voice slt -t "Back away from the mob A E incoming"')
 
 
-# single player
+
 SHAD6CHAR = SHADOW6 + CHARACTER
 SHAD6CHAR:
     os.system('flite -voice slt -t "Run away from the raid"')
@@ -45,44 +45,44 @@ SHADOW7:
 
 
 
-# Glimpse, the Unseen - The Threshold
-# single player
+
+
 GLIMPCHAR = GLIMPSE + CHARACTER
 GLIMPCHAR:
     os.system('flite -voice slt -t "run far away from the raid, east"')
 
 
 
-# Ulrich the Ageless - The Threshold
-# single player
+
+
 ULRICH1:
     os.system('flite -voice slt -t "run through an aura, do not linger"')
 
 
-# single player
+
 ULRICH2:
     os.system('flite -voice slt -t "run through an aura, or D A"')
 
 
 
-# Monarch Widow - The Threshold
+
 MONARCH:
     os.system('flite -voice slt -t "move raid 50 feet counter-clockwise to avoid web"')
 
 
 
-# An End to Fear - The Epicenter
-# single player
+
+
 ENDFEAR1:
     os.system('flite -voice slt -t "move out of melee range"')
 
 
-# single player
+
 ENDFEAR2:
     os.system('flite -voice slt -t "get curse cure"')
 
 
-# single player
+
 ENDFEAR3:
     os.system('flite -voice slt -t "get corruption cure"')
 
@@ -91,88 +91,88 @@ ENDFEAR4:
     os.system('flite -voice slt -t "Xaric is vulnerable, kill kill kill"')
 
 
-# single player
+
 ENDFEAR5:
     os.system('flite -voice slt -t "stop D P S until effect wears off"')
 
 
-##### END RoF #####
 
 
-##### START CoF #####
 
-# Bixie Warfront: Pelzia's Plot raid.
-# single player
+
+
+
+
 PEL1CHAR = PELZIA1 + CHARACTER
 PEL1CHAR:
     os.system('flite -voice slt -t "run west away from raid"')
 
 
-# single player
+
 PEL2CHAR = PELZIA2 + CHARACTER
 PEL2CHAR:
     os.system('flite -voice slt -t "run east away from raid"')
 
 
 
-# The Dead Hills: Xulous Prime raid.
-# single player
+
+
 XULOUS1:
     os.system('flite -voice slt -t "kite the cloud of disease"')
 
 
-# single player
+
 XULOUS2:
     os.system('flite -voice slt -t "kite the cloud of disease"')
 
 
-# single player
+
 XULOUS3:
     os.system('flite -voice slt -t "get disease cure"')
 
 
-# single player
+
 XULOUS4:
     os.system('flite -voice slt -t "move out of the disease aura"')
 
 
-# single player
+
 XULOUS5:
     os.system('flite -voice slt -t "gate out now"')
 
 
 
-# Neriak - Fourth Gate: Houses of Thex raid.
+
 THEX1:
     os.system('flite -voice slt -t "move out of range"')
 
 
-# single player
+
 THEX2CHAR = THEX2 + CHARACTER
 THEX2CHAR:
     os.system('flite -voice slt -t "run east away from the raid"')
 
 
-# single player
+
 THEX3CHAR = THEX3 + CHARACTER
 THEX3CHAR:
     os.system('flite -voice slt -t "kite until the energy pulse fades away"')
 
 
-# single player
+
 THEX4:
     os.system('flite -voice slt -t "move out of the lightning pulse"')
 
 
-# single player
+
 THEX5CHAR = THEX5 + CHARACTER
 THEX5CHAR:
     os.system('flite -voice slt -t "run away from the raid"')
 
 
 
-# Neriak - Fourth Gate: Hate Rising raid.
-# single player
+
+
 HATERISING1:
     os.system('flite -voice slt -t "move out of the damaging aura"')
 
@@ -182,7 +182,7 @@ HATERISING2:
 
 
 
-# Tower of Rot: Lord Kyle Bayle raid.
+
 BAYLE1:
     os.system('flite -voice slt -t "move out of melee range and hold pets"')
 
@@ -192,8 +192,8 @@ BAYLE2:
 
 
 
-# Argin-Hiz: Burn Out raid.
-# single player
+
+
 BURNOUT1:
     os.system('flite -voice slt -t "move out of the aura"')
 
@@ -211,12 +211,12 @@ BURNOUT4:
 
 
 
-# The Void (H): The Journey Home raid.
+
 JOURNEY1:
     os.system('flite -voice slt -t "get out of melee range"')
 
 
-# single player
+
 JOURNEY2:
     os.system('flite -voice slt -t "take portal to another island"')
 
@@ -229,7 +229,7 @@ JOURNEY4:
     os.system('flite -voice slt -t "Lanys is casting beam DoT, prepare to mass a curse cure"')
 
 
-# single player
+
 JOURNEY5:
     os.system('flite -voice slt -t "get a curse cure"')
 
@@ -238,19 +238,19 @@ JOURNEY6:
     os.system('flite -voice slt -t "move out of melee range"')
 
 
-# single player
+
 JOUR7CHAR = JOURNEY7 + CHARACTER
 JOUR7CHAR:
     os.system('flite -voice slt -t "run away from raid and hide"')
 
 
-# single player
+
 JOUR8CHAR = JOURNEY8 + CHARACTER
 JOUR8CHAR:
     os.system('flite -voice slt -t "get a corruption cure"')
 
 
-# single player
+
 JOUR9CHAR = JOURNEY9 + CHARACTER
 JOUR9CHAR:
     os.system('flite -voice slt -t "move away from the edge of the island now"')
@@ -260,67 +260,67 @@ JOURNEY10:
     os.system('flite -voice slt -t "move to your assigned island now or die"')
 
 
-# single player
+
 JOURNEY11:
     os.system('flite -voice slt -t "get a corruption cure"')
 
 
-##### END CoF #####
 
 
-##### START Fifteenth Anniversary #####
 
-# The Plane of War: 15th anniversary raid.
+
+
+
 POW15:
     os.system('flite -voice slt -t "move away from the A E circle"')
 
 
-##### END Fifteenth Anniversary #####
 
 
-##### START TDS #####
 
-# Defense of the City
-# single player
+
+
+
+
 TDSDEF1:
     os.system('flite -voice slt -t "move away from the raid now"')
 
 
-# single player
+
 TDSDEF2:
     os.system('flite -voice slt -t "It is safe to return to the raid"')
 
 
-# single player
+
 TDSDEF3:
     os.system('flite -voice slt -t "It is safe to return to the raid"')
 
 
-# single player
+
 TDSD4CHAR = TDSDEF4 + CHARACTER
 TDSD4CHAR:
     os.system('flite -voice slt -t "It is safe to return to the raid"')
 
 
-# single player
+
 TDSDEF5:
     os.system('flite -voice slt -t "Get a disease cure"')
 
 
 
-# Principal Quastori Numicia
-# single player
+
+
 QUASI1:
     os.system('flite -voice slt -t "Move out of the aura"')
 
 
-# single player
+
 QUASI2:
     os.system('flite -voice slt -t "Move away from the raid"')
 
 
 
-# Praetor Vitio
+
 VITIO1:
     os.system('flite -voice slt -t "Move away from his left side"')
 
@@ -350,7 +350,7 @@ VITIO7:
 
 
 
-# Principal Vicarum Nomia
+
 NOMIA1:
     os.system('flite -voice slt -t "Move away from the target"')
 
@@ -359,13 +359,13 @@ NOMIA2:
     os.system('flite -voice slt -t "Move away from the blob"')
 
 
-# single player
+
 NOM3CHAR = CHARACTER + NOMIA3
 NOM3CHAR:
     os.system('flite -voice slt -t "Run away from the raid"')
 
 
-# single player
+
 NOMIA4:
     os.system('flite -voice slt -t "Start running or get a corruption cure"')
 
@@ -374,7 +374,7 @@ NOMIA5:
     os.system('flite -voice slt -t "D P S on totems"')
 
 
-# single player
+
 NOMIA6:
     os.system('flite -voice slt -t "Move away from the raid"')
 
@@ -387,23 +387,23 @@ NOMIA8:
     os.system('flite -voice slt -t "Heal the totems"')
 
 
-# single player
+
 NOMIA9:
     os.system('flite -voice slt -t "Run away you are the target for the A E"')
 
 
-##### END TDS #####
 
 
-##### START TBM RAIDS #####
 
-# Maestro TBM Raid
+
+
+
 MAESTRO:
     os.system('flite -voice slt -t "healer cure"')
 
 
 
-# Inny TBM Raid
+
 INNY1:
     os.system('flite -voice slt -t "fade or feign death"')
 
@@ -413,12 +413,12 @@ INNY2:
 
 
 
-# Anashti Sul, Lady of Life
+
 LIFE1:
     os.system('flite -voice slt -t "Run into the aura"')
 
 
-# single player
+
 LIFE2:
     os.system('flite -voice slt -t "Do not get healed, you will explode"')
 
@@ -428,19 +428,19 @@ LIFE3:
 
 
 
-# Wither and Decay
+
 WITHER1:
     os.system('flite -voice slt -t "Run away from the raid"')
 
 
-# single player
+
 WITHER2:
     os.system('flite -voice slt -t "Move off of the ooze"')
 
 
 
-# Anashti Sul, Damsel of Decay
-# single player
+
+
 ANASH1CHAR = ANASHTI1 + CHARACTER
 ANASH1CHAR:
     os.system('flite -voice slt -t "Stop casting disease and corruption based spells"')
@@ -450,44 +450,44 @@ ANASHTI2:
     os.system('flite -voice slt -t "The boss has warped"')
 
 
-# single player
+
 ANASHTI3:
     os.system('flite -voice slt -t "Your cured"')
 
 
-# single player
+
 ANASHTI4:
     os.system('flite -voice slt -t "Do not cure the gift of endless life"')
 
 
-# single player
+
 ANASHTI5:
     os.system('flite -voice slt -t "Get curse cure if you do not have gift of endless life buff"')
 
 
-# single player
+
 ANASHTI6:
     os.system('flite -voice slt -t "move away from the tendrils"')
 
 
-# single player
+
 ANASHTI7:
     os.system('flite -voice slt -t "Cure disease"')
 
 
-# single player
+
 ANASHTI8:
     os.system('flite -voice slt -t "Cure disease twice"')
 
 
-# single player
+
 ANASHTI9:
     os.system('flite -voice slt -t "Cure disease once"')
 
 
 
-# Grannus of the Cleansing Steam
-# single player
+
+
 GRANNUS1:
     os.system('flite -voice slt -t "get a corruption cure"')
 
@@ -509,21 +509,21 @@ GRANNUS5:
 
 
 
-# Stem the Tide
-# single player
+
+
 TIDECHAR = TIDE + CHARACTER
 TIDECHAR:
     os.system('flite -voice slt -t "Run away from the raid"')
 
 
 
-# Grummus!
-# single player
+
+
 GRUMMUS1:
     os.system('flite -voice slt -t "Move away from the raid"')
 
 
-# single player
+
 GRUM2CHAR = GRUMMUS2 + CHARACTER
 GRUM2CHAR:
     os.system('flite -voice slt -t "Move away from the raid"')
@@ -538,14 +538,14 @@ GRUMMUS4:
 
 
 
-# High Bokon Boromas
+
 BOKON:
     os.system('flite -voice slt -t "Cure disease"')
 
 
 
-# Anashti Sul, Enslaver of Souls
-# single player
+
+
 ENSL1CHAR = ENSLAVER1 + CHARACTER
 ENSL1CHAR:
     os.system('flite -voice slt -t "Run north or south away from the raid"')
@@ -563,22 +563,22 @@ ENSLAVER4:
     os.system('flite -voice slt -t "Cure disease twice"')
 
 
-##### END TBM RAIDS #####
 
 
-##### START 17th Anniversary Raid #####
 
-# Seventeen pieces of silver raid
+
+
+
 HF17:
     os.system('flite -voice slt -t "run through the aura now"')
 
 
-##### END 17th Anniversary Raid #####
 
 
-##### START EoK RAIDS #####
 
-# Doorstep of War - Lceanium
+
+
+
 LCE1:
     os.system('flite -voice slt -t "Move away from her front"')
 
@@ -596,8 +596,8 @@ LCE4:
 
 
 
-# The Summoning of Droga - Droga
-# single player
+
+
 DROG1CHAR = DROGA1 + CHARACTER
 DROG1CHAR:
     os.system('flite -voice slt -t "move away from droga"')
@@ -611,26 +611,26 @@ DROGA3:
     os.system('flite -voice slt -t "get corruption cure"')
 
 
-# single player
+
 DROG4CHAR = DROGA4 + CHARACTER
 DROG4CHAR:
     os.system('flite -voice slt -t "move away from raid and out of drogas line of sight"')
 
 
-# single player
+
 DROG5CHAR = DROGA5 + CHARACTER
 DROG5CHAR:
     os.system('flite -voice slt -t "move out of drogas line of sight"')
 
 
-# single player
+
 DROG6CHAR = DROGA6 + CHARACTER
 DROG6CHAR:
     os.system('flite -voice slt -t "you have the red ring. move away from the raid"')
 
 
 
-# Queen Velazul Di'zok - Chardok
+
 VELAZUL1:
     os.system('flite -voice slt -t "move north into the tunnel"')
 
@@ -639,12 +639,12 @@ VELAZUL2:
     os.system('flite -voice slt -t "it is safe to return to the raid"')
 
 
-##### END EoK RAIDS #####
 
 
-##### START GENERAL UTILITY ALERTS #####
 
-# Invis dropped
+
+
+
 APPEARING:
     all_notify("Invisibility Drop")
 
@@ -788,7 +788,7 @@ SPELL_INTERRUPT:
 
 
 
-# Feign death failed
+
 CHARFALL = CHARACTER + FALLEN
 CHARFALL:
     os.system('flite -voice slt -t "feign death failed"')
@@ -798,17 +798,17 @@ FDBROKEN:
     os.system('flite -voice slt -t "feign death was broken"')
 
 
-# Feign death all clear
+
 FDCLEAR:
     os.system('flite -voice slt -t "you can get up now"')
 
 
-# Feign death resist
+
 FDRESIST:
     os.system('flite -voice slt -t "you resume feigning death"')
 
 
-# Mez Timers
+
 MEZ:
     background_task(19, 'Mez Warn', 'Mez')
 

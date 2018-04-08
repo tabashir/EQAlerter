@@ -1,541 +1,912 @@
 ##### START RoF #####
-# A Matter of Life and Death - Chapterhouse
+## A Matter of Life and Death - Chapterhouse
+
 MARNEK1:
   expect: "Marnek enters the realm of the dead"
-    os.system('flite -voice slt -t "Marnek is in skeleton form, shrouded players DPS now"')
+  message: "Marnek is in skeleton form, shrouded players DPS now"
+
 MARNEK2:
   expect: "A Corpse Collector begins to drag"
-    os.system('flite -voice slt -t "Corpse collector is dragging a corpse"')
-# Dispelling the Shadows - Plane of Shadow
+  message: "Corpse collector is dragging a corpse"
+
+  # Dispelling the Shadows - Plane of Shadow
 SHADOW1:
-  expect: "You are struck by a pulse of"                    	# Signals the need for a group heal
-    os.system('flite -voice slt -t "Group heal"')
+  expect: "You are struck by a pulse of"
+  message: "Group heal"
+  # Signals the need for a group heal
 
 SHADOW2:
-  expect: "points at {CHARACTER}"                            	        # Target DA or self DA and then stand right underneath Shadow of Luclin, She will perma-aggro this person even if DA and you can continue to DPS
-    os.system('flite -voice slt -t "D, A, and get aggro"')
+  expect: "points at {CHARACTER}"
+  message: "D, A, and get aggro"
+  # Target DA or self DA and then stand right underneath Shadow of Luclin
+  # She will perma-aggro this person even if DA and you can continue to DPS
 
 SHADOW3:
-  expect: "raises its sword at {CHARACTER}"                          	# Frontal Cone DD at that player, move away from front
-    os.system('flite -voice slt -t "Move away from the front"')
+  expect: "raises its sword at {CHARACTER}"
+  message: "Move away from the front"
+  # Frontal Cone DD at that player, move away from front
 
 SHADOW4:
-  expect: "aims a straight cut at {CHARACTER}"                        	# Beam DD (front and back), move out of range
-    os.system('flite -voice slt -t "Move out of range"')
+  expect: "aims a straight cut at {CHARACTER}"    	
+  message: "Move out of range"
+  # Beam DD (front and back), move out of range
 
 SHADOW5:
-  expect: "glances around itself"                           	# AE DD, Back away
-  os.system('flite -voice slt -t "Back away from the mob A E incoming"')
+  expect: "glances around itself"  	# AE DD, Back away
+  message: "Back away from the mob A E incoming"
 
 SHADOW6:
-  expect: "shadows will consume you, {CHARACTER}"                      	# Run away from raid, return only when it fades. FAILURE WILL WIPE THE RAID
-    os.system('flite -voice slt -t "Run away from the raid"')
+  expect: "shadows will consume you, {CHARACTER}"  	
+  message: "Run away from the raid"
+  # Run away from raid, return only when it fades. FAILURE WILL WIPE THE RAID
 
 SHADOW7:
-  expect: "the chamber flares and trembles"                 	# Casts Shadow Annihilation, a debuff with 100K damage amplifier and snare
-  os.system('flite -voice slt -t "Hide behind a pillar until the D, O, T, fades"'
-                                                                	# When you have this debuff, run and HIDE behind a pillar until she fires Shadow Explosion, 
-                                                                	# return only when it fades. If missed, when Luclin casts Shadow Explosion, 
-                                                                        # you will PBAE everyone around you for 100K damage. This starts at 15% Luclin health. FAILURE WILL WIPE THE RAID
+  expect: "the chamber flares and trembles"  	
+  message: "Hide behind a pillar until the D, O, T, fades"
+  # Casts Shadow Annihilation, a debuff with 100K damage amplifier and snare
+  # When you have this debuff, run and HIDE behind a pillar until she fires Shadow Explosion,
+  # return only when it fades. If missed, when Luclin casts Shadow Explosion,
+  # you will PBAE everyone around you for 100K damage. This starts at 15% Luclin health. 
+  # FAILURE WILL WIPE THE RAID
 
-# Glimpse, the Unseen - The Threshold
+## Glimpse, the Unseen - The Threshold
 GLIMPSE:
-  expect: "You shall not escape my sight, {CHARACTER}"                     # When you get this you must run over 600' away from the raid
-  os.system('flite -voice slt -t "run far away from the raid, east"')                                                              	# This means from the fight spot you must run east off the platform and into the tunnel to the east
-                                                                	# After 12 seconds you can return. You might also want to make yourself invulnerable 
-                                                                	# somehow (DA or similar) if you can before the 12 seconds, or you are likely to die
+  expect: "You shall not escape my sight, {CHARACTER}" 
+  message: "run far away from the raid, east"
+  # When you get this you must run over 600' away from the raid
+  # This means from the fight spot you must run east off the platform and into the tunnel to the east
+  # After 12 seconds you can return. You might also want to make yourself invulnerable 
+  # somehow (DA or similar) if you can before the 12 seconds, or you are likely to die
 
-# Ulrich the Ageless - The Threshold
+## Ulrich the Ageless - The Threshold
 ULRICH1:
-  expect: "You feel your life drain away"                   	# You have a DoT on you. To remove it before you die, run through one of the auras around the room
-  os.system('flite -voice slt -t "run through an aura, do not linger"')                                                                      # Do not linger in the aura or you will get another DoT on you. Just run right through it and do not double back
+  expect: "You feel your life drain away"    	
+  message: "run through an aura, do not linger" 
+  # You have a DoT on you. To remove it before you die, run through one of the auras around the room
+  # Do not linger in the aura or you will get another DoT on you. Just run right through it and do not double back
+
 ULRICH2:
-  expect: "Your bones ache"                                 	# The DoT above was not cured and it now has entered the terminal stage
-  os.system('flite -voice slt -t "run through an aura, or D A"')                                                                  # Unless you run through an aura or make yourself invulnerable somehow (DA or similar) you will soon lose 5 million hit points
+  expect: "Your bones ache"
+  message: "run through an aura, or D A" 
+  # The DoT above was not cured and it now has entered the terminal stage
+  # Unless you run through an aura or make yourself invulnerable somehow (DA or similar) you will soon lose 5 million hit points
 
-# Monarch Widow - The Threshold
+## Monarch Widow - The Threshold
 MONARCH:
-  expect: "The Monarch Widow begins to spin a web around"   	# In about 10 seconds, a "sticky web" will spawn at the location the player named in this emote was standing at the time of the emote
-    os.system('flite -voice slt -t "move raid 50 feet counter-clockwise to avoid web"')                                                                    # The entire raid needs to move about 50' counter-clockwise, fighting the Widow there
+  expect: "The Monarch Widow begins to spin a web around"   	
+  message: "move raid 50 feet counter-clockwise to avoid web" 
+  # In about 10 seconds, a "sticky web" will spawn at the location the player named in this emote was standing at the time of the emote  
+  # The entire raid needs to move about 50' counter-clockwise, fighting the Widow there
 
-# An End to Fear - The Epicenter
+## An End to Fear - The Epicenter
 ENDFEAR1:
-  expect: "You have been marked for punishment"            	# Move out of Xarics melee range and wait for it to wear off
-    os.system('flite -voice slt -t "move out of melee range"')
+  expect: "You have been marked for punishment"  	
+  message: "move out of melee range"
+  # Move out of Xarics melee range and wait for it to wear off
 
 ENDFEAR2:
-  expect: "You feel a weight of impending doom"            	# Call for curse cure, 80 counters
-    os.system('flite -voice slt -t "get curse cure"')
+  expect: "You feel a weight of impending doom"  	
+  message: "get curse cure"
+  # Call for curse cure, 80 counters
 
 ENDFEAR3:
-  expect: "The corruption of Cazic infests your body"      	# Call for corruption cure, 55 counters
-    os.system('flite -voice slt -t "get corruption cure"')
+  expect: "The corruption of Cazic infests your body" 	
+  message: "get corruption cure"
+  # Call for corruption cure, 55 counters
 
 ENDFEAR4:
-  expect: "Xaric has become vulnerable to death"           	# Kill Xaric
-    os.system('flite -voice slt -t "Xaric is vulnerable, kill kill kill"')
+  expect: "Xaric has become vulnerable to death" 	
+  message: "Xaric is vulnerable, kill kill kill"
+  # Kill Xaric
 
 ENDFEAR5:
-  expect: "You are oppressed by misery"                    	# Stop all casting and attacking until it wears off
-    os.system('flite -voice slt -t "stop D P S until effect wears off"')
+  expect: "You are oppressed by misery"	
+  message: "stop D P S until effect wears off"
+  # Stop all casting and attacking until it wears off
 
 ##### END RoF #####
 
 
 ##### START CoF #####
 
-# Bixie Warfront: Pelzia's Plot raid.
+## Bixie Warfront: Pelzia's Plot raid.
+
 
 PELZIA1:
-  expect: "A yellow cloud forms above "                   	# Run west away from others.
-
+  expect: "A yellow cloud forms above {CHARACTER}"    	
+  message: "run west away from raid"
+  # Run west away from others.
 
 PELZIA2:
-  expect: "A red cloud forms above "                      	# Run east away from others.
+  expect: "A red cloud forms above {CHARACTER}"  	
+  message: "run east away from raid"
+  # Run east away from others.
 
-# The Dead Hills: Xulous Prime raid.
-
+## The Dead Hills: Xulous Prime raid.
 XULOUS1:
-  expect: "begins to form around you"                       	# An aura "Cloud of Disease" is heading for you. You need to kite it.
+  message: "kite the cloud of disease"
+  expect: "begins to form around you"   	
+  # An aura "Cloud of Disease" is heading for you. You need to kite it.
+
 XULOUS2:
-  expect: "A cloud of disease moves toward you"             	# An aura "Cloud of Disease" is heading for you. You need to kite it.
+  message: "kite the cloud of disease"
+  expect: "A cloud of disease moves toward you"   	
+  # An aura "Cloud of Disease" is heading for you. You need to kite it.
+
 XULOUS3:
-  expect: "Your flesh begins to bubble and ooze"            	# You have a disease on you that must be cured.
+  message: "get disease cure"
+  expect: "Your flesh begins to bubble and ooze"  	
+  # You have a disease on you that must be cured.
+
 XULOUS4:
-  expect: "The stench of decay renders you weak"            	# You are in a disease aura and need to move out of it.
+  message: "move out of the disease aura"
+  expect: "The stench of decay renders you weak"  	
+  # You are in a disease aura and need to move out of it.
+
 XULOUS5:
-  expect: "Your flesh rots"                                 	# You need to gate or otherwise get out.
+  message: "gate out now"
+  expect: "Your flesh rots"   	
+  # You need to gate or otherwise get out.
 
 
-# Neriak - Fourth Gate: Houses of Thex raid.
-
+## Neriak - Fourth Gate: Houses of Thex raid.
 THEX1:
-  expect: "Sooo cooooold"                                     	# Move out of range.
+  message: "move out of range"
+  expect: "Sooo cooooold"  	
+  # Move out of range.
+
 THEX2:
-  expect: "Get the one called "                            	# Run east away from the raid. Note there is a comma after the player name in the trigger phrase.
-                                                                	# 10 seconds after that emote, you will get hit by Sonic Shock (you might be lucky and resist it).
-                                                                	# Sonic Shock: Targeted AE 75', Chromatic (-900), Decrease Hitpoints by 70000 per tick, lasts for 24 seconds.
-                                                                	# If this hits you, unless you get heals spammed on you, you will die. If you are near anyone (75 feet) 
-                                                                	# you will also give it to them and you will wipe the raid.
+  message: "run east away from the raid"
+  expect: "Get the one called {CHARACTER}"   	
+  # Run east away from the raid. Note there is a comma after the player name in the trigger phrase.
+  # 10 seconds after that emote, you will get hit by Sonic Shock (you might be lucky and resist it).
+  # Sonic Shock: Targeted AE 75', Chromatic (-900), Decrease Hitpoints by 70000 per tick, lasts for 24 seconds.
+  # If this hits you, unless you get heals spammed on you, you will die. If you are near anyone (75 feet) 
+  # you will also give it to them and you will wipe the raid.
+
 THEX3:
-  expect: "An energy pulse moves toward "                    	# Kite until the aura fades away.
-                                                                	# This one means you have to kite the energy pulse. 
-                                                                	# They seem to come from behind the Bone Crusher and move out toward the person called. 
-                                                                	# They move slowly. You do NOT run when you get this emote. 
-                                                                	# You move a bit toward Bone Crusher away from people and wait for the energy pulse to approach you.
-                                                                	# Then you kite it around. After a few minutes it seemed to stop following me or it despawned. 
-                                                                	# Either way, I seemed free to go back to rejoin everyone.
+  message: "kite until the energy pulse fades away"
+  expect: "An energy pulse moves toward "	# Kite until the aura fades away.
+  # This one means you have to kite the energy pulse. 
+  # They seem to come from behind the Bone Crusher and move out toward the person called. 
+  # They move slowly. You do NOT run when you get this emote. 
+  # You move a bit toward Bone Crusher away from people and wait for the energy pulse to approach you.
+  # Then you kite it around. After a few minutes it seemed to stop following me or it despawned. 
+  # Either way, I seemed free to go back to rejoin everyone.
+
 THEX4:
-  expect: "You are zapped by electricity"                     	# Get out of the lightning pulse.
+  message: "move out of the lightning pulse"
+  expect: "You are zapped by electricity" 	
+  # Get out of the lightning pulse.
+
 THEX5:
-  expect: "The one called "                                	# Run away from the raid. 10 seconds after this emote, Nightmare Devourer will cast Grave Chill on you. You can then rejoin the raid.
+  message: "run away from the raid"
+  expect: "The one called "  	
+  # Run away from the raid. 10 seconds after this emote, Nightmare Devourer will cast Grave Chill on you. You can then rejoin the raid.
 
 
-# Neriak - Fourth Gate: Hate Rising raid.
-
+## Neriak - Fourth Gate: Hate Rising raid.
 HATERISING1:
-  expect: "You are bombarded by icy rain"               	# Move out of the damaging aura.
+  message: "move out of the damaging aura"
+  expect: "You are bombarded by icy rain"	
+  # Move out of the damaging aura.
+
 HATERISING2:
-  expect: "is pinned to the ground by a spear"          	# Move at least 30' away from whoever is being pinned.
+  message: "move away from the pinned player"
+  expect: "is pinned to the ground by a spear"	
+  # Move at least 30' away from whoever is being pinned.
 
-# Tower of Rot: Lord Kyle Bayle raid.
-
+## Tower of Rot: Lord Kyle Bayle raid.
 BAYLE1:
-  expect: "Bayle raises his ancient claymore high"           	# Move out of melee range, call back pets. Main tank remains.
+  message: "move out of melee range and hold pets"
+  expect: "Bayle raises his ancient claymore high" 	
+  # Move out of melee range, call back pets. Main tank remains.
+
 BAYLE2:
-  expect: "Lord Kyle Bayle swings his ancient claymore"      	# All clear to resume melee, send in pets.
+  message: "resume melee and send in pets"
+  expect: "Lord Kyle Bayle swings his ancient claymore" 	
+  # All clear to resume melee, send in pets.
 
-# Argin-Hiz: Burn Out raid.
-
+## Argin-Hiz: Burn Out raid.
 BURNOUT1:
-  expect: "The rolling blaze painfully burns your skin"    	# Move out of the aura.
+  message: "move out of the aura"
+  expect: "The rolling blaze painfully burns your skin"    	
+  # Move out of the aura.
+
 BURNOUT2:
-  expect: "I call to you, Solusek Ro"                      	# Imps are spawning, make yourself invisible at once.
+  message: "Imps are spawning, invis everyone now"
+  expect: "I call to you, Solusek Ro"  	
+  # Imps are spawning, make yourself invisible at once.
+
 BURNOUT3:
-  expect: "the flames of the other grow much stronger"     	# Minibosses are out of balance. Balance them.
+  message: "balance the mini bosses"
+  expect: "the flames of the other grow much stronger"	
+  # Minibosses are out of balance. Balance them.
+
 BURNOUT4:
-  expect: "a wildfire phoenix swoops down"                 	# Phoenix spawn.
+  message: "a phoenix spawned"
+  expect: "a wildfire phoenix swoops down"  	
+  # Phoenix spawn.
 
-# The Void (H): The Journey Home raid.
-
+## The Void (H): The Journey Home raid.
 JOURNEY1:
-  expect: "begins to spin his sickle"                      	# Zebuxoruk is casting Cyclonic Sickle. This is a point blank area effect spell. You need to back off out of range.
+  message: "get out of melee range"
+  expect: "begins to spin his sickle"  	
+  # Zebuxoruk is casting Cyclonic Sickle. This is a point blank area effect spell. You need to back off out of range.
+
 JOURNEY2:
-  expect: "Your mind is penetrated by ravings"             	# Zebuxoruk is casting Zebuxoruk's Ravings or Forsaken Ravings. 
-                                                                	# Single target on melee and hybrid only (12 second Countdown to AE charm). 
-                                                                	# If missed, 24 second charm on anyone in range of you. You must run away from the raid by taking a portal to another island.
+  message: "take portal to another island"
+  expect: "Your mind is penetrated by ravings"   	
+  # Zebuxoruk is casting Zebuxoruk's Ravings or Forsaken Ravings. 
+  # Single target on melee and hybrid only (12 second Countdown to AE charm). 
+  # If missed, 24 second charm on anyone in range of you. You must run away from the raid by taking a portal to another island.
+
 JOURNEY3:
-  expect: "prepares to beat Selo's Drum"                   	# Lanys T'Vyl is casting Selo's Frenzy (charm) on the main tank. Next tank needs to get ready.
+  message: "Lanys is charming the main tank"
+  expect: "prepares to beat Selo's Drum"    	
+  # Lanys T'Vyl is casting Selo's Frenzy (charm) on the main tank. Next tank needs to get ready.
+
 JOURNEY4:
-  expect: "stokes the Flame of Ro"                         	# Lanys T'Vyl is casting Ro's Flaming Swath (80' frontal beam doom DoT). 
-                                                                	# If not cured in 30 seconds it'll hit everyone nearby for 161k DD. 
-                                                                	# Pet Owners: When it fires you must BACK OFF YOUR PET, because the beam can hit your pet 
-                                                                	# which then causes the nearby main tanks on Lanys to be hit with the Doom DoT effect, which when it fades kills the tanks.
+  message: "Lanys is casting beam DoT, prepare to mass a curse cure"
+  expect: "stokes the Flame of Ro"	
+  # Lanys T'Vyl is casting Ro's Flaming Swath (80' frontal beam doom DoT). 
+  # If not cured in 30 seconds it'll hit everyone nearby for 161k DD. 
+  # Pet Owners: When it fires you must BACK OFF YOUR PET, because the beam can hit your pet 
+  # which then causes the nearby main tanks on Lanys to be hit with the Doom DoT effect, which when it fades kills the tanks.
+
 JOURNEY5:
-  expect: "You begin to burn"                              	# You have been hit by the Ro's Flaming Swath DoT (above). You have 30 seconds to be cured of 75 curse counters or you will die.
+  message: "get a curse cure"
+  expect: "You begin to burn"	
+  # You have been hit by the Ro's Flaming Swath DoT (above). You have 30 seconds to be cured of 75 curse counters or you will die.
+
 JOURNEY6:
-  expect: "raises the Qeynos Claymore"                     	# Lanys T'Vyl is about to smack those near her with Qeynos Technique (115K DD plus 23K DoT and AC debuff).
+  message: "move out of melee range"
+  expect: "raises the Qeynos Claymore" 	
+  # Lanys T'Vyl is about to smack those near her with Qeynos Technique (115K DD plus 23K DoT and AC debuff).
+
 JOURNEY7:
-  expect: "as strong as you think, "                    	# Lanys T'Vyl is about to cast a frontal AE at the character named. You need to move out of line of sight of her, run and hide. 
-                                                                    # This will hit others between you and her, that is why you need to hide from her.
+  message: "run away from raid and hide"
+  expect: "as strong as you think, {CHARACTER}"	
+  # Lanys T'Vyl is about to cast a frontal AE at the character named. You need to move out of line of sight of her, run and hide. 
+  # This will hit others between you and her, that is why you need to hide from her.
+
 JOURNEY8:
-  expect: "see how weak you are, "                        	# You got hit by the above. Get corruption cured. May take two casts of the cure.
+  message: "get a corruption cure"
+  expect: "see how weak you are, {CHARACTER}"    	
+  # You got hit by the above. Get corruption cured. May take two casts of the cure.
+
 JOURNEY9:
-  expect: "this was my island, "                        	# Lanys T'Vyl is about to try to knock you off the island (which would kill you) in 5 seconds. Move away from the edges.
+  message: "move away from the edge of the island now"
+  expect: "this was my island, "    	
+  # Lanys T'Vyl is about to try to knock you off the island (which would kill you) in 5 seconds. Move away from the edges.
+
 JOURNEY10:
-  expect: "This island shall be your grave"               	# Lanys T'Vyl is about to kill anyone on the main island. You need to go to the island you were assigned to now.
+  message: "move to your assigned island now or die"
+  expect: "This island shall be your grave"	
+  # Lanys T'Vyl is about to kill anyone on the main island. You need to go to the island you were assigned to now.
+
 JOURNEY11:
-  expect: "Your soul begins to wither"                    	# Zebuxoruk has cast Wasting on you. Spell casters only should get hit by this. You need a corruption cure or you are likely to die.
+  message: "get a corruption cure"
+  expect: "Your soul begins to wither"	
+  # Zebuxoruk has cast Wasting on you. Spell casters only should get hit by this. You need a corruption cure or you are likely to die.
 
 ##### END CoF #####
 
-
 ##### START Fifteenth Anniversary #####
 
-# The Plane of War: 15th anniversary raid.
-
+## The Plane of War: 15th anniversary raid.
 POW15:
-  expect: "appears to be taking aim at this area"             	# Tallon Zek is going to put an AE in a circular area, move out of it. 
-                                                                    # Most will be able to see the circle on the ground if you have the right particle effects on.
+  message: "move away from the A E circle"
+  expect: "appears to be taking aim at this area"   	
+  # Tallon Zek is going to put an AE in a circular area, move out of it. 
+  # Most will be able to see the circle on the ground if you have the right particle effects on.
 
 ##### END Fifteenth Anniversary #####
 
-
 ##### START TDS #####
 
-# Defense of the City
+## Defense of the City
 
 TDSDEF1:
-  expect: "You feel faint claws scratching at your back"    	# Get away from everyone else (10 seconds to move).
+  message: "move away from the raid now"
+  expect: "You feel faint claws scratching at your back"    	
+  # Get away from everyone else (10 seconds to move).
+
 TDSDEF2:
-  expect: "Dark claws rake at your body"                    	# You have been hit by the area effect from the trigger above. It is now safe for you to go back to the rest of the raid.
+  message: "It is safe to return to the raid"
+  expect: "Dark claws rake at your body"	
+  # You have been hit by the area effect from the trigger above. It is now safe for you to go back to the rest of the raid.
+
 TDSDEF3:
-  expect: "You resist the Pillar of Claws spell"            	# You have been hit by the area effect from first trigger above but you resisted taking damage. 
-                                                                    # It is now safe for you to go back to the rest of the raid.
+  message: "It is safe to return to the raid"
+  expect: "You resist the Pillar of Claws spell"  	
+  # You have been hit by the area effect from first trigger above but you resisted taking damage. 
+  # It is now safe for you to go back to the rest of the raid.
+
 TDSDEF4:
-  expect: "unleashes a Pillar of Claws on "                	# You have been hit by the area effect from the first trigger above. It is now safe for you to go back to the rest of the raid.
+  message: "It is safe to return to the raid"
+  expect: "unleashes a Pillar of Claws on {CHARACTER}" 	
+  # You have been hit by the area effect from the first trigger above. It is now safe for you to go back to the rest of the raid.
+
 TDSDEF5:
-  expect: "Your limbs are bound"                            	# Get disease cured.
+  message: "Get a disease cure"
+  expect: "Your limbs are bound"   	
+  # Get disease cured.
 
-# Principal Quastori Numicia
-
+## Principal Quastori Numicia
 QUASI1:
-  expect: "cuts you with a"                                  	# You are in a damaging aura. You need to move out of it.
+  message: "Move out of the aura"
+  expect: "cuts you with a"    	
+  # You are in a damaging aura. You need to move out of it.
+
 QUASI2:
-  expect: "You are jolted by a terrible spark of lightning"  	# You need to run away from everyone else and remain away until the effect on you is gone.
+  message: "Move away from the raid"
+  expect: "You are jolted by a terrible spark of lightning"  	
+  # You need to run away from everyone else and remain away until the effect on you is gone.
 
-# Praetor Vitio
+## Praetor Vitio
+
 VITIO1:
-  expect: "holds the hammer in his left hand high overhead"  	# Move away from Praetor Vitio's left side.
-VITIO2:
-  expect: "holds the sword in his right hand high overhead"  	# Move away from Praetor Vitio's right side.
-VITIO3:
-  expect: "holds both of his weapons out to his sides"       	# Move away from Praetor Vitio.
-VITIO4:
-  expect: "begins to focus the power of the citadel"         	# Move close to Praetor Vitio.
-VITIO5:
-  expect: "takes note of the invaders standing behind him"   	# Move away from Praetor Vitio's back.
-VITIO6:
-  expect: "prepares to strike"                                   # This will only happen to the main tank. Praetor Vitio will cast a Death Touch on you if you don't drop aggro. 
-                                                                    # You need to drop aggro and let the next tank take him.
-VITIO7:
-  expect: "Someone else should take his attention"               # This happens at the same time as the trigger above. The main tank is dropping aggro and the next tank is taking over. 
-                                                                    # Everyone involved needs to be ready for the switch.
+  message: "Move away from his left side"
+  expect: "holds the hammer in his left hand high overhead"  	
+  # Move away from Praetor Vitio's left side.
 
-# Principal Vicarum Nomia
+VITIO2:
+  message: "Move away from his right side"
+  expect: "holds the sword in his right hand high overhead"  	
+  # Move away from Praetor Vitio's right side.
+
+VITIO3:
+  message: "Move away from Vitio"
+  expect: "holds both of his weapons out to his sides"  	
+  # Move away from Praetor Vitio.
+
+VITIO4:
+  message: "Get close to Vitio"
+  expect: "begins to focus the power of the citadel"    	
+  # Move close to Praetor Vitio.
+
+VITIO5:
+  message: "Move away from his back"
+  expect: "takes note of the invaders standing behind him"   	
+  # Move away from Praetor Vitio's back.
+
+VITIO6:
+  message: "Main tank drop aggro"
+  expect: "prepares to strike"
+  # This will only happen to the main tank.
+  # Praetor Vitio will cast a Death Touch on you if you don't drop aggro.
+  # You need to drop aggro and let the next tank take him.
+
+VITIO7:
+  message: "Next tank start taunting"
+  expect: "Someone else should take his attention"
+  #  This happens at the same time as the trigger above.
+  #  The main tank is dropping aggro and the next tank is taking over.
+  # Everyone involved needs to be ready for the switch.
+
+## Principal Vicarum Nomia
 NOMIA1:
-  expect: "The principal pulls on your soul"                     # Move away from named.
+  message: "Move away from the target"
+  expect: "The principal pulls on your soul" 
+  # Move away from named.
+
 NOMIA2:
-  expect: "freezing liquid swirls about your feet"               # Move away from blob.
+  message: "Move away from the blob"
+  expect: "freezing liquid swirls about your feet" 
+  # Move away from blob.
+
 NOMIA3:
-  expect: " has attracted the attention"                        # Run away from the raid.
+  message: "Run away from the raid"
+  expect: "{CHARACTER} has attracted the attention"    
+  # Run away from the raid.
+
 NOMIA4:
-  expect: "Cold spreads up from your feet"                       # Run around the room until you have moved a total of 60 feet, or get corruption cured. 
-                                                                    # When you have succeeded this icon (hand) will disappear from your buff window.
+  message: "Start running or get a corruption cure"
+  expect: "Cold spreads up from your feet"   
+  # Run around the room until you have moved a total of 60 feet, or get corruption cured. 
+  # When you have succeeded this icon (hand) will disappear from your buff window.
+
 NOMIA5:
-  expect: "Now these totems will prove your undoing"             # Totems up, DPS them.
+  message: "D P S on totems"
+  expect: "Now these totems will prove your undoing"   
+  # Totems up, DPS them.
+
 NOMIA6:
-  expect: "You are hit with an explosion of ice"                 # Move from the area.
+  message: "Move away from the raid"
+  expect: "You are hit with an explosion of ice"  
+  # Move from the area.
+
 NOMIA7:
-  expect: "Principal Vicarum Nomia begins to cast a spell"       # <Icesplosion> - Back away from boss for 10 seconds.
+  message: "Move away from the target for 10 seconds"
+  expect: "Principal Vicarum Nomia begins to cast a spell"  
+  # <Icesplosion> - Back away from boss for 10 seconds.
+
 NOMIA8:
-  expect: "life cannot be restored to dead flesh"                # Totems up, heal them.
+  message: "Heal the totems"
+  expect: "life cannot be restored to dead flesh" 
+  # Totems up, heal them.
+
 NOMIA9:
-  expect: "a phasma frigasia points a bony finger at you"        # AE inc on you. Run away.
+  message: "Run away you are the target for the A E"
+  expect: "a phasma frigasia points a bony finger at you"   
+  # AE inc on you. Run away.
 
 ##### END TDS #####
 
 
 ##### START TBM #####
 
-# Plane of Hate: Revisited raid.
+## Plane of Hate: Revisited raid.
 
-# Maestro of Rancor
+## Maestro of Rancor
 MAESTRO:
-  expect: "A dissonant chord rings in your ears"               # You have Dissonant Muse on you. This means you have 6 Seconds to get a corruption cure to avoid the mana drain. 
-                                                                    # If not cured and you still have Dissonant Muse on you when the Maestro casts Dissonant Tone you get pretty much death touched. 
-                                                                    # Cure Dissonant Muse or you will die shortly.
+  message: "healer cure"
+  expect: "A dissonant chord rings in your ears"
+  # You have Dissonant Muse on you. This means you have 6 Seconds to get a corruption cure to avoid the mana drain.
+  # If not cured and you still have Dissonant Muse on you when the Maestro casts Dissonant Tone you get pretty much death touched.
+  # Cure Dissonant Muse or you will die shortly.
 
-# Innorukk
+## Innorukk
 INNY1:
-  expect: "You are done in by bad things"                         # This is the trigger for the increased hate. If you get this you should fade, if possible.
-INNY2:
-  expect: "You feel a sense of doom upon you"                     # Run to the aura (visible as purple/blue sparklies) which will randomly move between one of three circles of runestones, 
-                                                                    # running into it removes doom so you do NOT receive the 125k DD.  
+  message: "fade or feign death"
+  expect: "You are done in by bad things"
+  # This is the trigger for the increased hate.
+  # If you get this you should fade, if possible.
 
-# Anashti Sul, Lady of Life
+INNY2:
+  message: "run through the aura now"
+  expect: "You feel a sense of doom upon you" 
+  # Run to the aura (visible as purple/blue sparklies) which will randomly move between one of three circles of runestones, 
+  # running into it removes doom so you do NOT receive the 125k DD.  
+
+## Anashti Sul, Lady of Life
 LIFE1:
-  expect: "Anasthi Sul grants holistic health to her assailants"  # Everyone sees/hears this trigger but it only applies to the names mentioned when it goes off (yellow text across the screen). 
-                                                                    # If you get the Holistic Health buff on your screen (melee and tanks only usually but can hit anyone), 
-                                                                    # melee Anashti Sul to lower her regen so DPS can burn her down. At 10 seconds left of the buff (which will be in your buff window) 
-                                                                    # RUN INTO THE AURA OR YOU DIE AND SPAWN AN ADD. Note that her name is misspelled in this trigger, 
-                                                                    # that is Daybreak's error, use the spelling given here.
+  message: "Run into the aura"
+  expect: "Anasthi Sul grants holistic health to her assailants"  
+  # Everyone sees/hears this trigger but it only applies to the names mentioned when it goes off (yellow text across the screen). 
+  # If you get the Holistic Health buff on your screen (melee and tanks only usually but can hit anyone), 
+  # melee Anashti Sul to lower her regen so DPS can burn her down. At 10 seconds left of the buff (which will be in your buff window) 
+  # RUN INTO THE AURA OR YOU DIE AND SPAWN AN ADD. Note that her name is misspelled in this trigger, 
+  # that is Daybreak's error, use the spelling given here.
 
 LIFE2:
-  expect: "You feel an overwhelming and dangerous burst"          # If anyone heals you, you explode. So run through the hallway away from the raid until the red buff wears off. 
-                                                                    # DO NOT HEAL THIS PERSON(S)'. Note that you should make a hot key letting your group and the raid know to not heal you.
+  message: "Do not get healed, you will explode"
+  expect: "You feel an overwhelming and dangerous burst"
+  # If anyone heals you, you explode. So run through the hallway away from the raid until the red buff wears off. 
+  # DO NOT HEAL THIS PERSON(S)'. Note that you should make a hot key letting your group and the raid know to not heal you.
 
 LIFE3:
-  expect: "I, Dartain, do your bidding mistress"                  # This will follow up with text across your screen in yellow with what direction the skull in the center of the room will be facing. 
-                                                                    # MOVE TO NOT BE IN THE AREA OF THE ROOM THAT THE SKULL IS FACING.
+  message: "Move to the area where the skull is facing"
+  expect: "I, Dartain, do your bidding mistress"   
+  # This will follow up with text across your screen in yellow with what direction the skull in the center of the room will be facing. 
+  # MOVE TO NOT BE IN THE AREA OF THE ROOM THAT THE SKULL IS FACING.
 
-# Wither and Decay
+## Wither and Decay
 WITHER1:
-  expect: "Decay spews a pile of living vomit"                  # Run away from the raid.
+  message: "Run away from the raid"
+  expect: "Decay spews a pile of living vomit"   
+  # Run away from the raid.
+
 WITHER2:
-  expect: "You decay rapidly. You have taken"                   # You are on top of an ooze, move.
+  message: "Move off of the ooze"
+  expect: "You decay rapidly. You have taken"    
+  # You are on top of an ooze, move.
 
-# Anashti Sul, Damsel of Decay
+## Anashti Sul, Damsel of Decay
+
 ANASHTI1:
-  expect: "Anashti Sul, Damsel of Decay moans 'Ahhh, that feels much better. I am disease and corruption incarnate, "    # Stop using disease and corruption spells.
+  message: "Stop casting disease and corruption based spells"
+  expect: "Anashti Sul, Damsel of Decay moans 'Ahhh, that feels much better. I am disease and corruption incarnate, {CHARACTER}"    
+  # Stop using disease and corruption spells.
+
 ANASHTI2:
-  expect: "Anashti Sul laughs, 'I am not even there"           # Boss has Warped
+  message: "The boss has warped"
+  expect: "Anashti Sul laughs, 'I am not even there" 
+  # Boss has Warped
+
 ANASHTI3:
-  expect: "You've drawn the ire of Anashti Sul"                # You cured Gift of Endless Life (the good one!!)
+  message: "You are cured"
+  expect: "You've drawn the ire of Anashti Sul" 
+  # You cured Gift of Endless Life (the good one!!)
+
 ANASHTI4:
-  expect: "You receive the Gift of Endless Life"               # DO NOT CURE!
+  message: "Do not cure the gift of endless life"
+  expect: "You receive the Gift of Endless Life"
+  # DO NOT CURE!
+
 ANASHTI5:
-  expect: "You receive the Gift of Living Death"               # Check First! Get Curse Cured if you don't have Endless Life DoT.
+  message: "Get curse cure if you do not have gift of endless life buff"
+  expect: "You receive the Gift of Living Death"
+  # Check First! Get Curse Cured if you don't have Endless Life DoT.
+
 ANASHTI6:
-  expect: "You are lashed by tendrils of pestilence"           # MOVE away from the tendrils
+  message: "move away from the tendrils"
+  expect: "You are lashed by tendrils of pestilence" 
+  # MOVE away from the tendrils
+
 ANASHTI7:
-  expect: "Your bones are brittle"                             # Tanks and Healers: Cure Disease ONCE! DPS: Cure Disease TWICE!
+  message: "Cure disease"
+  expect: "Your bones are brittle"    
+  # Tanks and Healers: Cure Disease ONCE! DPS: Cure Disease TWICE!
+
 ANASHTI8:
-  expect: "Your faith falters"                                 # Healers: Cure Disease TWICE!.
+  message: "Cure disease twice"
+  expect: "Your faith falters"   
+  # Healers: Cure Disease TWICE!.
+
 ANASHTI9:
-  expect: "Your muscles atrophy"                               # DPS: Cure Disease ONCE!
+  message: "Cure disease once"
+  expect: "Your muscles atrophy" 
+  # DPS: Cure Disease ONCE!
 
-# Grannus of the Cleansing Steam
+## Grannus of the Cleansing Steam
 GRANNUS1:
-  expect: "Your health is linked to another"                   # Get corruption cure.
+  message: "get a corruption cure"
+  expect: "Your health is linked to another"    
+  # Get corruption cure.
+
 GRANNUS2:
-  expect: "Grannus is now sharing his pain with"               # Paladin's Splash Now!!
+  message: "Pally splash now"
+  expect: "Grannus is now sharing his pain with"
+  # Paladin's Splash Now!!
+
 GRANNUS3:
-  expect: "The death of the morphling creature"                # Portal is vulnerable, go DPS it (if instructed to).
+  message: "D P S the portal now"
+  expect: "The death of the morphling creature" 
+  # Portal is vulnerable, go DPS it (if instructed to).
+
 GRANNUS4:
-  expect: "Grannus's life force is reinforced"                 # Spells are being reflected from Grannus - Stop nuking
+  message: "Stop nuking"
+  expect: "Grannus's life force is reinforced"  
+  # Spells are being reflected from Grannus - Stop nuking
+
 GRANNUS5:
-  expect: "Grannus's protective magic has been broken"         # Spell reflection down, nuke away!
+  message: "Resume nuking"
+  expect: "Grannus's protective magic has been broken"    
+  # Spell reflection down, nuke away!
 
-# Stem the Tide
+## Stem the Tide
 TIDE:
-  expect: "I will destroy you "                                    # When you get this you have 10 seconds to run away from the raid or you will AE everyone around you for 92k. Possibly can be cured.
+  message: "Run away from the raid"
+  expect: "I will destroy you {CHARACTER}" 
+  # When you get this you have 10 seconds to run away from the raid or you will AE everyone around you for 92k. Possibly can be cured.
 
-# Grummus!
+## Grummus!
+
 GRUMMUS1:
-  expect: "Flames erupt where you stand"                       # Viral DoT, move from the raid.
+  message: "Move away from the raid"
+  expect: "Flames erupt where you stand"   
+  # Viral DoT, move from the raid.
+
 GRUMMUS2:
-  expect: "Grummus kicks a barrel at "                         # You are targeted with a barrel, so move, and everyone around you needs to also move.
+  message: "Move away from the raid"
+  expect: "Grummus kicks a barrel at {CHARACTER}"
+  # You are targeted with a barrel, so move, and everyone around you needs to also move.
+
 GRUMMUS3:
-  expect: "You have succeeded in breaking Grummus"             # Grummus is vulnerable, kill him.
+  message: "Grummus is vulnerable, kill, kill, kill"
+  expect: "You have succeeded in breaking Grummus"   
+  # Grummus is vulnerable, kill him.
+
 GRUMMUS4:
-  expect: "Grummus is surrounded by a protective aura"         # Shield is up, Grumuus is invulnerable.
+  message: "Grummus is invulnerable, your D P S is wasted"
+  expect: "Grummus is surrounded by a protective aura"    
+  # Shield is up, Grumuus is invulnerable.
 
-# High Bokon Boromas
+## High Bokon Boromas
 BOKON:
-  expect: "you feel weak"                                         # Get a disease cure.
+  message: "Cure disease"
+  expect: "you feel weak" 
+  # Get a disease cure.
 
-# Anashti Sul, Enslaver of Souls
-
+## Anashti Sul, Enslaver of Souls
 ENSLAVER1:
-  expect: "Anashti Sul envelops "                             # Run north or south away from the raid. A DoT will appear in your song window. Get heals until it goes away and then you can rejoin the raid.
+  message: "Run north or south away from the raid"
+  expect: "Anashti Sul envelops {CHARACTER}"    
+  # Run north or south away from the raid. A DoT will appear in your song window. Get heals until it goes away and then you can rejoin the raid.
+
 ENSLAVER2:
-  expect: "You have been targeted for poison blast"           # Make sure you are close to the majority of the raid.
+  message: "Get close to the raid"
+  expect: "You have been targeted for poison blast" 
+  # Make sure you are close to the majority of the raid.
+
 ENSLAVER3:
-  expect: "Stand and watch in horror as I melt"               # Run to the pool with the aura. Run now, do not pass Go, do not collect $200.
+  message: "Run to the pool with the aura now"
+  expect: "Stand and watch in horror as I melt"
+  # Run to the pool with the aura. Run now, do not pass Go, do not collect $200.
+
 ENSLAVER4:
-  expect: "Your flesh begins to rot"                          # Get disease cured. May take more than one cast.
+  message: "Cure disease twice"
+  expect: "Your flesh begins to rot" 
+  # Get disease cured. May take more than one cast.
 
 ##### END TBM #####
 
 
 ##### START 17th Anniversary #####
-# 17th Anniversary raid - Hate's Fury: Seventeen Pieces of Silver
-
+## 17th Anniversary raid - Hate's Fury: Seventeen Pieces of Silver
 HF17:
-  expect: "Rise, rise! It is time for you to bring them death"     # When you get this you should locate an aura and start heading toward it, 
-                                                                    # when the dot lands 10 seconds later step in then step immediately OUT so others can cure 
-                                                                    # (only a small number of people can be cured at the same time). 
-                                                                    # NOTE - MIST is cast 4 times in a row so be prepared to move in and out of the Aura repeatedly.
+  message: "run through the aura now"
+  expect: "Rise, rise! It is time for you to bring them death"
+  # When you get this you should locate an aura and start heading toward it, 
+  # when the dot lands 10 seconds later step in then step immediately OUT so others can cure 
+  # (only a small number of people can be cured at the same time). 
+  # NOTE - MIST is cast 4 times in a row so be prepared to move in and out of the Aura repeatedly.
 
 ##### END 17th Anniversary #####
 
-
 ##### START EoK #####
 
-# Doorstep of War - Lceanium
+## Doorstep of War - Lceanium
 LCE1:
-  expect: "Gorenaire takes a deep inhalation"                  	# Frontal AE incoming
+  message: "Move away from her front"
+  expect: "Gorenaire takes a deep inhalation"   	
+  # Frontal AE incoming
+
 LCE2:
-  expect: "Gorenaire's left wing twitches"                     	# Directional AE. Move from her left side
+  message: "Move away from her left side"
+  expect: "Gorenaire's left wing twitches" 	
+  # Directional AE. Move from her left side
+
 LCE3:
-  expect: "Gorenaire's right wing twitches"                    	# Directional AE. Move from her right side
+  message: "Move away from her right side"
+  expect: "Gorenaire's right wing twitches"	
+  # Directional AE. Move from her right side
+
 LCE4:
-  expect: "Gorenaire's tail twitches"                          	# Rear AE incoming. Move from her back side
+  message: "Move away from her back"
+  expect: "Gorenaire's tail twitches" 	
+  # Rear AE incoming. Move from her back side
 
-# The Summoning of Droga - Droga
+## The Summoning of Droga - Droga
+
 DROGA1:
-  expect: "The Incarnate Droga summons "           	# Move away from the Boss
+  message: "move away from droga"
+  expect: "The Incarnate Droga summons {CHARACTER}" 	
+  # Move away from the Boss
+
 DROGA2:
-  expect: "Droga prepares to splash the blood"               	# Boss is about to AE, move away - can see a big red ring to avoid
+  message: "move away from the red ring around droga"
+  expect: "Droga prepares to splash the blood"	
+  # Boss is about to AE, move away - can see a big red ring to avoid
+
 DROGA3:
-  expect: "You are marked as a sacrificial offering"         	# Get corruption cure
+  message: "get corruption cure"
+  expect: "You are marked as a sacrificial offering"    	
+  # Get corruption cure
+
 DROGA4:
-  expect: "The Incarnate Droga craves "            	# Move out of the boss's line of sight and away from the raid
+  message: "move away from raid and out of drogas line of sight"
+  expect: "The Incarnate Droga craves  {CHARACTER}"  	
+  # Move out of the boss's line of sight and away from the raid
+
 DROGA5:
-  expect: "Points his axe at "                     	# Move away from the front of the boss out of line of sight
+  message: "move out of drogas line of sight"
+  expect: "Points his axe at {CHARACTER}" 	
+  # Move away from the front of the boss out of line of sight
+
 DROGA6:
-  expect: "The Incarnate Droga stares at "         	# Red ring around one player, move away from the raid and ask for a poison cure
+  message: "you have the red ring. move away from the raid"
+  expect: "The Incarnate Droga stares at  {CHARACTER}"    	
+  # Red ring around one player, move away from the raid and ask for a poison cure
 
-# Prince Selrach Di'zok - Chardok
-# TODO: timers for events, this will take some work to support this event
+## Prince Selrach Di'zok - Chardok
+## TODO: timers for events, this will take some work to support this event
 
-# Queen Velazul Di'zok - Chardok
+## Queen Velazul Di'zok - Chardok
 VELAZUL1:
-  expect: "Sunlight gathers around you"                    	# Run away from the raid north until you are in the tunnel (away from the open sky)
+  message: "move north into the tunnel"
+  expect: "Sunlight gathers around you"	
+  # Run away from the raid north until you are in the tunnel (away from the open sky)
+
 VELAZUL2:
-  expect: "You are safe from the Doomlight"                	# You can now return to the raid
+  message: "it is safe to return to the raid"
+  expect: "You are safe from the Doomlight" 	
+  # You can now return to the raid
 
 ##### END EoK #####
 
 
 ##### START GENERAL UTILITY #####
 
-# adapted from http://www.icynic.com/~don/EQ/triggers/
+## adapted from http://www.icynic.com/~don/EQ/triggers/
 
-# Invis dropped
+## Invis dropped
 APPEARING:
+  message: "Invisibility Drop"
   expect: "You feel yourself starting to appear"
+
 VISIBLE1:
+  message: "Invisibility Drop"
   expect: "You appear"
+
 VISIBLE2:
+  message: "Invisibility Drop"
   expect: "You become visible"
+
 VISIBLE3:
+  message: "Invisibility Drop"
   expect: "You return to view"
+
 VISIBLE4:
+  message: "Invisibility Drop"
   expect: "Your shadows fade"
+
 VISIBLE5:
+  message: "Invisibility Drop"
   expect: "The mystical foliage vanishes"
+
 VISIBLE6:
+  message: "Invisibility Drop"
   expect: "The cloud of indifference fades"
+
 VISIBLE7:
+  message: "Invisibility Drop"
   expect: "Your body shifts into phase"
 
-# Feign Death
+LOST_FOLLOW1:
+  message: "Not Following"
+    expect: "canceling auto-follow"
+
+LOST_FOLLOW2:
+  message: "Not Following"
+    expect: "You are no longer auto-following"
+
+## Feign Death
 FALLEN:
-  expect: " has fallen to the ground"
+  message: "feign death failed"
+  expect: "{CHARACTER} has fallen to the ground"
+
 FDBROKEN:
+  message: "feign death was broken"
   expect: "You are no longer feigning death"
+
 FDRESIST:
+  message: "you resume feigning death"
   expect: "The strength of your will allows you to resume feigning death"
+
 FDCLEAR:
+  message: "you can get up now"
   expect:  "Your enemies have forgotten you"
 
 MEZ:
   expect: "has been mesmerized"
-ENTHRALL:
-  expect: "has been enthralled"
-ENTRANCE:
-  expect: "has been entranced"
-DAZZLE:
-  expect: "has been dazzled"
+  task:
+    title: "Mezmerize"
+    message: "Mesmerize warning"
+    time: 19
+
 FASCINATE:
   expect: "has been fascinated"
+  task:
+    title: "Fascinate"
+    message: "Fascinate warning"
+    time: 31
+
+ENTHRALL:
+  expect: "has been enthralled"
+  task:
+    title: "Enthrall"
+    message: "Enthrall warning"
+    time: 43
+
+ENTRANCE:
+  expect: "has been entranced"
+  task:
+    title: "Entrance"
+    message: "Entrance warning"
+    time: 67
+
+DAZZLE:
+  expect: "has been dazzled"
+  task:
+    title: "Dazzle"
+    message: "Dazzle warning"
+    time: 91
 
 MEZBREAK1:
+  message: "Mez break"
   expect: "no longer mesmerized"
+
 ENTHRALLBREAK1:
+  message: "Mez break"
   expect: "no longer enthralled"
+
 ENTRANCEBREAK1:
+  message: "Mez break"
   expect: "no longer entranced"
+
 DAZZLEBREAK1:
+  message: "Mez break"
   expect: "no longer dazzled"
+
 FASCINATEBREAK1:
+  message: "Mez break"
   expect: "no longer fascinated"
 
 GENERALBREAK:
+  message: "spell worn off"
   expect: "spell has worn off"
 
 CHARMBREAK:
+  message: "CHARM break"
   expect: "Your charm spell has worn off"
 
 ROOTBREAK1:
+  message: "Root break"
   expect: "Root spell has worn off"
+
 ROOTBREAK2:
+  message: "Root break"
   expect: "Your Grasping Roots spell has worn off"
 
 ALERT_HAIL:
+  message: "Hail {CHARACTER}"
   expect: 'Hail, '
+
 INVITE:
+  message: "Invite {CHARACTER}"
   expect: ' invites you to join a'
 
 LOST_FOLLOW1:
+  message: 'Not Following'
   expect: 'canceling auto-follow'
+
 LOST_FOLLOW2:
+  message: 'Not Following'
   expect: 'You are no longer auto-following'
 
 DROPPED_ITEM1:
+  message: 'Item dropped'
   expect: 'item has dropped to the ground'
+
 DROPPED_ITEM2:
+  message: 'Item dropped'
   expect: 'item falls to the ground'
+
 DROPPED_ITEM3:
+  message: 'Item dropped'
   expect: 'just dropped your'
 
 REAGENT_FAIL:
+  message: 'Missing component'
   expect: 'are missing some required components'
+
 NO_MANA:
+  message: "Out of Mana"
   expect: 'Insufficient Mana to cast this spell'
+
 SPELL_RESIST:
+  message: "Resisted" 
   expect: "target resisted the"
+
 SPELL_FIZZLE:
+  message: "Fizz"
   expect: "our spell fizzles"
+
 SPELL_INTERRUPT:
+  message: "Interrupted"
   expect: "spell is interrupted"
 
 LORE_ITEM:
+  message: "Duplicate lore item"
   expect: 'already have that Lore Item on your person or in the bank'
 
-TELL_TO_IGNORE1:
-  expect: "That'll be"
-TELL_TO_IGNORE2:
-  expect: "I'll give you"
-TELL_TO_IGNORE3:
-  expect: "Welcome to my bank"
-TELL_TO_IGNORE4:
-  expect: "Come back soon!"
-TELL_TO_IGNORE5:
-  expect: "A fine donation! You'll receive"
-TELL_TO_IGNORE6:
-  expect: "We graciously accept your"
-TELL_TO_IGNORE7:
-  expect: "I cannot accept your"
-TELL_TO_IGNORE8:
-  expect: "You have increased your skill in"
-TELL_TO_IGNORE9:
-  expect: "I am unable to wake"
-TELL_TO_IGNOREA:
-  expect: "Attacking"
-
+TELL:
+  expect: "tells you,"
+  ignore: [
+    "That'll be",
+    "I'll give you",
+    "Welcome to my bank",
+    "Come back soon!",
+    "A fine donation! You'll receive",
+    "We graciously accept your",
+    "I cannot accept your",
+    "You have increased your skill in",
+    "I am unable to wake",
+    "Attacking"
+  ]
 
 ##### END GENERAL UTILITY #####
 
