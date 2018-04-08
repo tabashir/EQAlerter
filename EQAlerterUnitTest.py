@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import unittest
 from MessageGenerator import *
 
@@ -20,6 +22,15 @@ class TestMessageGenerator(unittest.TestCase):
     def test_line_depending_on_character_name_when_character_not_matched(self):
         line = "shadows will consume you, anothertoon"
         self.assertIsNone(MessageGenerator.message_for_line(line, 'tabashir'))
+
+    def test_basic_tell(self):
+        line = "anothertoon tells you, 'hello there'"
+        expected_message = 'Incoming Tell'
+        self.assertEqual(expected_message, MessageGenerator.message_for_line(line, ''))
+
+    def test_tell_that_we_ignore(self):
+        line = "a vendor tells you, That'll be 10 plat"
+        self.assertIsNone(MessageGenerator.message_for_line(line, ''))
 
 if __name__ == '__main__':
     unittest.main()
