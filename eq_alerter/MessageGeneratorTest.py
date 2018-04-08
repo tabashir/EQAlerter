@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 import unittest
-from message_generator import *
+from MessageGenerator import *
 
 class TestMessageGenerator(unittest.TestCase):
 
