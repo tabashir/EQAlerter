@@ -44,10 +44,10 @@ from os import listdir
 from os.path import isfile, join
 
 # classes
-from Config import *
-from DepCheck import *
-from CharacterList import *
-from MessageGenerator import *
+from config import *
+from dep_check import DepCheck
+from character_list import CharacterList
+from message_generator import MessageGenerator
 
 
 with open("alerts.yaml", 'r') as stream:
@@ -142,10 +142,9 @@ try:
                 continue
 
             print("DEBUG: "+line)
-            message = MessageGenerator.message_for_line(line, CHARACTER)
-            print("DEBUG: "+message)
-            if message:
-                all_notify(message)
+            action = MessageGenerator.action_for(line, CHARACTER)
+            if action:
+                action.run()
 
 
 

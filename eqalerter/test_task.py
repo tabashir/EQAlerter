@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 
 import unittest
-from AudioMessage import *
-from VisualMessage import *
-from DelayedMessage import *
-from Config import *
+from config import *
+from delayed_message import DelayedMessage
+from multi_channel_message import MultiChannelMessage
+from base_message import BaseMessage
+from audio_message import AudioMessage
+from visual_message import VisualMessage
 
 class TestMessageGenerator(unittest.TestCase):
 

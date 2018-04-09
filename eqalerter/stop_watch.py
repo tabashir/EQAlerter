@@ -1,7 +1,7 @@
 #!/usr/bin/python
+import os, time, sys, math
 
-def stopwatch ( duration = 2, alert_msg = "timer ended", granularity = 1 ):
-    import os, time, sys, math
+def stopwatch( duration = 2, alert_msg = "timer ended", granularity = 1 ):
     granularity=float(granularity)
     duration=float(duration)
     start = time.time()
@@ -21,6 +21,12 @@ def stopwatch ( duration = 2, alert_msg = "timer ended", granularity = 1 ):
         else:
             time.sleep( granularity - time_since_screen_update )
 
-    command = 'flite -voice slt -t "' + alert_msg + '"'
-    sys.stdout.write(command)
-    os.system(command)
+    audio_command = 'flite -voice slt -t "' + alert_msg + '"'
+    visual_command = 'notify-send --urgency low --expire-time=1000 "' + alert_msg + '"'
+    sys.stdout.write(audio_command)
+    sys.stdout.write(visual_command)
+    os.system(audio_command)
+    os.system(visual_command)
+
+if __name__ == '__main__':
+    stopwatch(sys.argv[1], sys.argv[2], sys.argv[3])

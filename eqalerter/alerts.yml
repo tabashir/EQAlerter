@@ -896,6 +896,7 @@ LORE_ITEM:
   expect: 'already have that Lore Item on your person or in the bank'
 
 TELL:
+  message: "Incoming Tell"
   expect: "tells you,"
   ignore: [
     "That'll be",

@@ -1,4 +1,4 @@
-from BaseMessage import *
+from base_message import BaseMessage
 
 class VisualMessage(BaseMessage):
 

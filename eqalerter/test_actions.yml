@@ -1,0 +1,56 @@
+### Messages for Unit tests
+
+MARNEK1:
+  expect: "Marnek enters the realm of the dead"
+  message: "Marnek is in skeleton form, shrouded players DPS now"
+
+SHADOW6:
+  expect: "shadows will consume you, {CHARACTER}"
+  message: "Run away from the raid"
+  # Run away from raid, return only when it fades. FAILURE WILL WIPE THE RAID
+
+MEZ:
+  expect: "has been mesmerized"
+  task:
+    title: "Mezmerize"
+    message: "Mesmerize warning"
+    time: 19
+
+FASCINATE:
+  expect: "has been fascinated"
+  task:
+    title: "Fascinate"
+    message: "Fascinate warning"
+    time: 31
+
+MEZBREAK1:
+  message: "Mez break"
+  expect: "no longer mesmerized"
+
+GENERALBREAK:
+  message: "spell worn off"
+  expect: "spell has worn off"
+
+CHARMBREAK:
+  message: "CHARM break"
+  expect: "Your charm spell has worn off"
+
+ROOTBREAK1:
+  message: "Root break"
+  expect: "Root spell has worn off"
+
+TELL:
+  expect: "tells you,"
+  ignore: [
+    "That'll be",
+    "I'll give you",
+    "Welcome to my bank",
+    "Come back soon!",
+    "A fine donation! You'll receive",
+    "We graciously accept your",
+    "I cannot accept your",
+    "You have increased your skill in",
+    "I am unable to wake",
+    "Attacking"
+  ]
+
