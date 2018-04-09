@@ -6,4 +6,4 @@ class DelayedMessage(BaseMessage):
         self.message = message
         self.title = title
         self.timeout = timeout
-        self.command = 'urxvt -iconic -geometry 15x1 -bg red -fg white -title ' + title + ' -e python StopWatchTest.py ' + str(timeout) + ' "' + message + '" 1'
+        self.command = 'urxvt -iconic -geometry 15x1 -bg red -fg white -title ' + title + ' -e python stop_watch.py ' + str(timeout) + ' "' + message + '" 1'

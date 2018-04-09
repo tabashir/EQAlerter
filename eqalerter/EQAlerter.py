@@ -45,22 +45,18 @@ from os.path import isfile, join
 
 # classes
 from config import *
-from dep_check import DepCheck
-from character_list import CharacterList
+from dep_check import *
+from character_list import *
 from message_generator import MessageGenerator
+from actions_map import ActionsMap
 
-
-with open("alerts.yaml", 'r') as stream:
-    try:
-        alerts = yaml.load(stream)
-    except yaml.YAMLError as exc:
-        print(exc)
 
 #### MAIN PROGRAM ####
 
 # dependency checks
 DepCheck.verifyOS()
 DepCheck.verifyFlite()
+DepCheck.verifyUrxvt()
 DepCheck.verifyLogging()
 
 # program banner 
@@ -101,40 +97,20 @@ LOGPATH = "eqlog_%s_%s.txt" % (CHARACTER, SERVER)
 LOGFILE = EQHOME+LOGPATH
 DepCheck.verifyLogFile(CHARACTER, LOGFILE)
 
+ACTIONS_MAP = ActionsMap('actions.yml').actions
 
-def background_task(time, message, name='EQT'):
-    command_line = 'urxvt -iconic -geometry 15x1 -bg red -fg white -title ' + name + ' -e python StopWatchTest.py ' + str(time) + ' "' + message + '" 1'
-    print(command_line)
-    command_args = shlex.split(command_line)
-    subprocess.Popen(command_args, close_fds=True)
-
-def gui_notify(message):
-    notify_line='notify-send --urgency low --expire-time=1000 --icon='+EQHOME+'EverQuest.ico '
-    command_line = notify_line + '"' + message + '"'
-    os.system(command_line)
-
-def audio_notify(message):
-    notify_line='flite -voice slt -t '
-    command_line = notify_line + '"' + message + '"'
-    os.system(command_line)
-
-def all_notify(message):
-    gui_notify(message)
-    audio_notify(message)
-
-
-
-# begin parsing log file for triggers and perform actions
 try:
 
     # open log file
     with open(LOGFILE, 'r+') as f:
         # move to the end of the file
         f.seek(0,2)
-
+        generator = MessageGenerator(EQHOME, CHARACTER, ACTIONS_MAP)
         # loop over each new line of the file
-        # act on keywords from chat messages parsed from logfile by calling
-        # the proper method from the corresponding class for the action
+        # act on keywords from chat messages parsed from logfile
+        # if no new line, wait for short while before re-checking
+        # NOTE: this is to prevent excessive CPU when there are no
+        # incoming lines, it should not delay between pending lines
         while True:
             line = f.readline()
             if not line:
@@ -142,7 +118,8 @@ try:
                 continue
 
             print("DEBUG: "+line)
-            action = MessageGenerator.action_for(line, CHARACTER)
+            action = generator.action_for(line)
+            print("DEBUG: "+action)
             if action:
                 action.run()
 

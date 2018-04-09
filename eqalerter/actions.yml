@@ -1,6 +1,6 @@
 ##### START RoF #####
-## A Matter of Life and Death - Chapterhouse
 
+## A Matter of Life and Death - Chapterhouse
 MARNEK1:
   expect: "Marnek enters the realm of the dead"
   message: "Marnek is in skeleton form, shrouded players DPS now"
@@ -9,7 +9,7 @@ MARNEK2:
   expect: "A Corpse Collector begins to drag"
   message: "Corpse collector is dragging a corpse"
 
-  # Dispelling the Shadows - Plane of Shadow
+## Dispelling the Shadows - Plane of Shadow
 SHADOW1:
   expect: "You are struck by a pulse of"
   message: "Group heal"
@@ -107,12 +107,9 @@ ENDFEAR5:
 
 ##### END RoF #####
 
-
 ##### START CoF #####
 
 ## Bixie Warfront: Pelzia's Plot raid.
-
-
 PELZIA1:
   expect: "A yellow cloud forms above {CHARACTER}"
   message: "run west away from raid"

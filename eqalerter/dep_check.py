@@ -20,7 +20,7 @@ import platform
 
 from os.path import isfile
 
-from Config import *
+from config import *
 
 # DepCheck - verifies dependencies are met prior to running
 #            also contains a method to validate users
@@ -44,6 +44,15 @@ class DepCheck:
         if subprocess.call(["which", "flite"]) == 1: 
             print("") 
             print("ERROR: flite is either not installed on the system or not in your path. Please install it via your distro's package manager or from source and add it to your path") 
+            sys.exit() 
+        print("") 
+
+    # verify that URXVT Terminal emulator is installed
+    def verifyUrxvt():
+        print("DEBUG: urxvt install path:")
+        if subprocess.call(["which", "urxvt"]) == 1: 
+            print("") 
+            print("ERROR: urxvt is either not installed on the system or not in your path. Please install it via your distro's package manager or from source and add it to your path") 
             sys.exit() 
         print("") 
 

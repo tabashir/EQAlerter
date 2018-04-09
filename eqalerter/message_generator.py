@@ -13,9 +13,11 @@ class MessageGenerator:
 
     def action_for(self, line):
         for action in self.action_list:
+            print('DEBUG: ' + action + ' EXPECT: ' + action['expect'])
             named_line = action['expect'].format(CHARACTER=self.character_name)
+            print('DEBUG: ' + named_line)
             if named_line in line:
-                # print('DEBUG: ' + named_line)
+                print('DEBUG: ' + named_line)
                 for ignore_line in action.get('ignore', []):
                     if ignore_line in line:
                         return
