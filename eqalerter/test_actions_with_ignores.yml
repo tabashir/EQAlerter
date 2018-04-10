@@ -1,0 +1,10 @@
+### Messages for Unit tests
+
+TELL:
+  expect: "tells you,"
+  message: "Incoming Tell"
+  ignore: [
+    "That'll be",
+    "Attacking"
+  ]
+

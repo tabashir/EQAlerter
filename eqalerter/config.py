@@ -4,7 +4,7 @@
 #### USER DEFINED VARIABILES - CHANGE THE VALUES TO SUIT YOUR NEEDS ####
 
 # eq installation directory
-EQHOME = "/home/jezm/.PlayOnLinux/wineprefix/TAKP_1/drive_c/Everquest/"
+EQHOME = "/home/jezm/.PlayOnLinux/wineprefix/EQ/drive_c/Everquest/"
 
 ## Discord specific settings - only needed if using Discord Bot version ##
 # general chat channel ID on discord server

@@ -8,7 +8,7 @@ from base_message import BaseMessage
 from audio_message import AudioMessage
 from visual_message import VisualMessage
 
-class TestMessageGenerator(unittest.TestCase):
+class TestTask(unittest.TestCase):
 
     def test_simple_message(self):
         unit = AudioMessage("my message")

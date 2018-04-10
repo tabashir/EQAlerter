@@ -6,14 +6,14 @@ from visual_message import VisualMessage
 
 class MessageGenerator:
 
-    def __init__(self, eq_home, character_name, action_list):
+    def __init__(self, eq_home, character_name, actions):
         self.eq_home = eq_home
         self.character_name = character_name
-        self.action_list = action_list
+        self.actions = actions
 
     def action_for(self, line):
-        for action in self.action_list:
-            print('DEBUG: ' + action + ' EXPECT: ' + action['expect'])
+        for name, action  in self.actions:
+            print('DEBUG: ' + name + ' EXPECT: ' + action['expect'])
             named_line = action['expect'].format(CHARACTER=self.character_name)
             print('DEBUG: ' + named_line)
             if named_line in line:

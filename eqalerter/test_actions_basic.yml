@@ -1,0 +1,27 @@
+### Messages for Unit tests
+
+MARNEK1:
+  expect: "Marnek enters the realm of the dead"
+  message: "Marnek is in skeleton form"
+
+SHADOW6:
+  expect: "shadows will consume you, {CHARACTER}"
+  message: "Run away from the raid"
+  # Run away from raid, return only when it fades. FAILURE WILL WIPE THE RAID
+
+MEZBREAK1:
+  message: "Mez break"
+  expect: "no longer mesmerized"
+
+GENERALBREAK:
+  message: "spell worn off"
+  expect: "spell has worn off"
+
+CHARMBREAK:
+  message: "CHARM break"
+  expect: "Your charm spell has worn off"
+
+ROOTBREAK1:
+  message: "Root break"
+  expect: "Root spell has worn off"
+
