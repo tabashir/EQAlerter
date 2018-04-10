@@ -2,9 +2,12 @@ import yaml
 
 class Action:
     def __init__(self, action):
-        self.message = action.get('message')
         self.expect = action.get('expect')
-        self.ignore = action.get('ignore')
+        self.ignore = action.get('ignore', [])
+        self.message = action.get('message')
+        if 'time' in action:
+            self.title = action.get('title', 'Timer')
+            self.time = action.get('time')
 
 
 class ActionsMapper:

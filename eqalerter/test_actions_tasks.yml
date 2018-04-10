@@ -2,14 +2,11 @@
 
 MEZ:
   expect: "has been mesmerized"
-  task:
-    title: "Mezmerize"
-    message: "Mesmerize warning"
-    time: 19
+  title: "Mezmerize"
+  message: "Mesmerize warning"
+  time: 19
 
 FASCINATE:
   expect: "has been fascinated"
-  task:
-    title: "Fascinate"
-    message: "Fascinate warning"
-    time: 31
+  message: "Fascinate warning"
+  time: 31

@@ -771,38 +771,33 @@ FDCLEAR:
 
 MEZ:
   expect: "has been mesmerized"
-  task:
-    title: "Mezmerize"
-    message: "Mesmerize warning"
-    time: 19
+  title: "Mezmerize"
+  message: "Mesmerize warning"
+  time: 19
 
 FASCINATE:
   expect: "has been fascinated"
-  task:
-    title: "Fascinate"
-    message: "Fascinate warning"
-    time: 31
+  title: "Fascinate"
+  message: "Fascinate warning"
+  time: 31
 
 ENTHRALL:
   expect: "has been enthralled"
-  task:
-    title: "Enthrall"
-    message: "Enthrall warning"
-    time: 43
+  title: "Enthrall"
+  message: "Enthrall warning"
+  time: 43
 
 ENTRANCE:
   expect: "has been entranced"
-  task:
-    title: "Entrance"
-    message: "Entrance warning"
-    time: 67
+  title: "Entrance"
+  message: "Entrance warning"
+  time: 67
 
 DAZZLE:
   expect: "has been dazzled"
-  task:
-    title: "Dazzle"
-    message: "Dazzle warning"
-    time: 91
+  title: "Dazzle"
+  message: "Dazzle warning"
+  time: 91
 
 MEZBREAK1:
   message: "Mez break"
