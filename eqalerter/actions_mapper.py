@@ -13,13 +13,13 @@ class Action:
 class ActionsMapper:
 
     def __init__(self, config_file):
-        self.actions = []
+        self.actions = {}
         with open(config_file, 'r') as stream:
             try:
                 action_map = yaml.load(stream).items()
                 for key,value in action_map:
                     print("DEBUG: %s=%s" % (key, value))
-                    self.actions.append(Action(value))
+                    self.actions[key] = Action(value)
 
             except yaml.YAMLError as exc:
                 print(exc)

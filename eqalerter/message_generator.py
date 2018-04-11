@@ -22,8 +22,7 @@ class MessageGenerator:
                     if ignore_line in line:
                         return
 
-                if 'task' in action:
-                    task = action['task']
+                if 'time' in action:
                     return DelayedMessage(task['time'], task['message'], task['title'])
 
                 return MultiChannelMessage(action['message'], self.eq_home)

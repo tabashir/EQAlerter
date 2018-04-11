@@ -1,0 +1,19 @@
+MARNEK1:
+  expect: "Marnek enters the realm of the dead"
+  message: "Marnek is in skeleton form, shrouded players DPS now"
+
+SHADOW6:
+  expect: "shadows will consume you, {CHARACTER}"
+  message: "Run away from the raid"
+
+TELL:
+  message: "Incoming Tell"
+  expect: "tells you,"
+  ignore: ["That'll be", "I am unable to wake"]
+
+MEZ:
+  expect: "has been mesmerized"
+  title: "Mez"
+  message: "Mesmerize Warning"
+  time: 19
+

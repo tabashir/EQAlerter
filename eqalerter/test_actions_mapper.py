@@ -17,25 +17,25 @@ class TestActionsMapper(unittest.TestCase):
 
     def test_message_action_instantiation(self):
         unit = ActionsMapper("test_actions_basic.yml")
-        item = unit.actions[0]
+        item = unit.actions['MARNEK1']
         self.assertEqual('Marnek enters the realm of the dead', item.expect)
         self.assertEqual('Marnek is in skeleton form', item.message)
 
     def test_message_instantiation_with_ignores(self):
         unit = ActionsMapper("test_actions_with_ignores.yml")
-        item = unit.actions[0]
+        item = unit.actions['TELL']
         self.assertEqual('tells you,', item.expect)
         self.assertEqual('Incoming Tell', item.message)
         self.assertEqual(["That'll be", 'Attacking'], item.ignore)
 
     def test_ignore_defaults_to_empty_array(self):
         unit = ActionsMapper("test_actions_basic.yml")
-        item = unit.actions[0]
+        item = unit.actions['MARNEK1']
         self.assertEqual([], item.ignore)
 
     def test_timer_instantiation(self):
         unit = ActionsMapper("test_actions_tasks.yml")
-        item = unit.actions[0]
+        item = unit.actions['MEZ']
         self.assertEqual('has been mesmerized', item.expect)
         self.assertEqual('Mezmerize', item.title)
         self.assertEqual('Mesmerize warning', item.message)
@@ -43,12 +43,12 @@ class TestActionsMapper(unittest.TestCase):
 
     def test_basic_instantiation_defaults(self):
         unit = ActionsMapper("test_actions_basic.yml")
-        item = unit.actions[0]
+        item = unit.actions['MARNEK1']
         self.assertEqual([], item.ignore)
 
     def test_timer_instantiation_defaults(self):
         unit = ActionsMapper("test_actions_tasks.yml")
-        item = unit.actions[1]
+        item = unit.actions['FASCINATE']
         self.assertEqual('has been fascinated', item.expect)
         self.assertEqual([], item.ignore)
         self.assertEqual('Timer', item.title)
@@ -56,7 +56,7 @@ class TestActionsMapper(unittest.TestCase):
 
     def test_timer_instantiation_with_ignores(self):
         unit = ActionsMapper("test_actions_tasks_with_ignores.yml")
-        item = unit.actions[0]
+        item = unit.actions['MEZ']
         self.assertEqual('action with ignore', item.expect)
         self.assertEqual('action with ignore message', item.message)
         self.assertEqual([ "by somebody else", "another ignore" ], item.ignore)
