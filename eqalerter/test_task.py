@@ -13,14 +13,14 @@ class TestTask(unittest.TestCase):
     def test_simple_message(self):
         unit = AudioMessage("my message")
         self.assertEqual("my message", unit.message)
-        self.assertTrue(callable(getattr(unit, 'run'))) 
+        self.assertTrue(callable(getattr(unit, 'run')))
 
     def test_delayed_message(self):
         unit = DelayedMessage(42, "my message description", "msgtitle")
         self.assertEqual("my message description", unit.message)
         self.assertEqual("msgtitle", unit.title)
         self.assertEqual(42, unit.timeout)
-        self.assertTrue(callable(getattr(unit, 'run'))) 
+        self.assertTrue(callable(getattr(unit, 'run')))
 
     def test_audio_message_command_line(self):
         unit = AudioMessage("my message")
