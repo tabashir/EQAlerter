@@ -138,7 +138,6 @@ MEZ:
 
 
 TODO:
-* Make it automatically detect log folder given the EQ folder (TAKP does not use Logs subfolder)
 * Config override file (so that it does not need checking in to git)
 * Actions should have class structure
 * Ability to configure whether an action is audio, visual or both from the config file

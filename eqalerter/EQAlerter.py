@@ -50,6 +50,7 @@ from dep_check import *
 from character_list import *
 from message_generator import MessageGenerator
 from actions_mapper import ActionsMapper
+from os.path import expanduser
 
 
 #### MAIN PROGRAM ####
@@ -58,12 +59,24 @@ from actions_mapper import ActionsMapper
 DepCheck.verifyOS()
 DepCheck.verifyFlite()
 DepCheck.verifyUrxvt()
-DepCheck.verifyLogging()
 
 # program banner 
 # TODO: NEED FUNKY ASCII ART HERE 
 print("\n\nStarting The EverQuest Alerter\n")
 print("Press Ctrl+C to exit\n")
+
+print("Choose folder location of your Everquest client\n")
+iterator = iter(EQHOMES)
+count = 0
+for c in EQHOMES:
+    print("%d: %s" % (count, next(iterator)))
+    count = count + 1
+
+# ask user to pick EQ folder to control from list
+FOLDERNUM = input("\n\nEnter the number corresponding to the EQ folder from the list: ")
+EQHOME = os.path.expanduser(EQHOMES[int(FOLDERNUM)])
+
+DepCheck.verifyLogging(EQHOME)
 
 # get character info
 ALLFILES = [u for u in listdir(EQHOME) if isfile(join(EQHOME, u))]
@@ -95,8 +108,8 @@ SERVER = CHARLIST.getServer(CHARNUM)
 
 # generate logfile path
 LOGPATH = "eqlog_%s_%s.txt" % (CHARACTER, SERVER) 
-LOGFILE = EQHOME+LOGPATH
-DepCheck.verifyLogFile(CHARACTER, LOGFILE)
+# LOGFILE = EQHOME+LOGPATH
+LOGFILE = DepCheck.getLogFile(EQHOME, CHARACTER, LOGPATH)
 
 ACTIONS_MAP = ActionsMapper('actions.yml').actions
 
@@ -120,7 +133,7 @@ try:
 
             # print("DEBUG: "+ line)
             action = generator.action_for(line)
-            # print("DEBUG.RESULT: " +str(action))
+            print("ACTION: %s" % (action.message))
             if action:
                 action.run()
 
