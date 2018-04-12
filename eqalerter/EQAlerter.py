@@ -132,8 +132,8 @@ try:
 
             # print("DEBUG: "+ line)
             action = generator.action_for(line)
-            print("ACTION: %s" % (action.message))
             if action:
+                print("ACTION: %s" % (action.message))
                 action.run()
 
 

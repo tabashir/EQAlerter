@@ -138,9 +138,10 @@ MEZ:
 
 
 TODO:
-* Config override file (so that it does not need checking in to git)
+* Config override (so that it does not need checking in to git), likely getopts or similar
 * Actions should have class structure
 * Ability to configure whether an action is audio, visual or both from the config file
 * Decent folder structure (src/test etc). This was Jez's first major python code and could not work out how to nicely load includes from other folders!
 * Tests around the main script
 * configure in config (not hard code) the terminal and window parameters for the delayed notification
+* add optional character name into notification for use if running multiple instances
