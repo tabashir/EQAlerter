@@ -12,7 +12,8 @@ Last Revision: 11/27/2017
 
 Purpose:  This program is intended to run on a Linux system running 'EverQuest' under 'Wine'.
           When running the program will parse your EverQuest chat log file for key phrases
-          contained in the Config.py file and trigger alerts using the flite TTS engine.  
+          contained in the Config.py file and trigger alerts using the flite TTS engine.
+          Ideas from: http://everquest.fanra.info/wiki/Raid_audio_triggers
 
 Dependencies: * Python 3.5 
               * CMU Flite text to speech engine for audio notifications
@@ -78,6 +79,10 @@ A. EQAlerter supports the following raid events:
 Q. What is GuildChat-Discord.py?
 
 A. A stand-alone program created to relay guild chat messages from a character log file to a private guild chat channel on Discord.  
+
+# Additions by Jez
+
+Most of the additional ideas came from here: http://www.icynic.com/~don/EQ/triggers/
 
 Q. What other triggers are supported?
 
