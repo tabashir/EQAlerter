@@ -9,6 +9,6 @@ class MultiChannelMessage(BaseMessage):
         self.eq_folder = eq_folder
 
     def run(self):
-        AudioMessage(message, self.eq_folder).run()
-        VisualMessage(message, self.eq_folder).run()
+        AudioMessage(self.message).run()
+        VisualMessage(self.message, self.eq_folder).run()
 
