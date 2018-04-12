@@ -118,9 +118,9 @@ try:
                 time.sleep(0.1)
                 continue
 
-            print("DEBUG: "+ line)
+            # print("DEBUG: "+ line)
             action = generator.action_for(line)
-            print("DEBUG.RESULT: " +str(action))
+            # print("DEBUG.RESULT: " +str(action))
             if action:
                 action.run()
 
