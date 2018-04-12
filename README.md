@@ -92,9 +92,9 @@ A. Current implemented list:
 Q. What other features does it have?
 A. Timers and Ignores
 
-Timers are so that you know when to refresh a spell, for example, Mez, Fascinate etc. On a mez landing, it will pop up a separate console window (currently set to urxvt) that will count down, then issue an audible warning and notification to refresh. 
+* Timers are so that you know when to refresh a spell, for example, Mez, Fascinate etc. On a mez landing, it will pop up a separate console window (currently set to urxvt) that will count down, then issue an audible warning and notification to refresh. 
 
-Ignores are so that you can get an alert on a class of events, but don't want a subset of them to alert you. For example, you want a tell from a player to notify, but don't want one when a vendor 'tells you that will be 10 plat'
+* Ignores are so that you can get an alert on a class of events, but don't want a subset of them to alert you. For example, you want a tell from a player to notify, but don't want one when a vendor 'tells you that will be 10 plat'
 
 Q. How do I add my own notifications?
 A. All messages and notifications are editable in the actions.yml file. This should be fairly self explanatory.
@@ -102,14 +102,17 @@ A. All messages and notifications are editable in the actions.yml file. This sho
 An action is in the following format:
 
 For all events:
-NAME: Just an identifier, but will need to be unique, othewise the last one in the file will prevail
-  expect: This is the phrase to trigger the event. If you want it to only trigger with your character name, use the tag {CHARACTER} where you would expect to see it in the phrase.
-  ignore: an array (inside []) of phrases that will mean you don't get a notification
-  message: phrase for the speech and visual notification
+
+* NAME: Just an identifier, but will need to be unique, othewise the last one in the file will prevail
+* expect: This is the phrase to trigger the event. If you want it to only trigger with your character name, use the tag {CHARACTER} where you would expect to see it in the phrase.
+* ignore: an array (inside []) of phrases that will mean you don't get a notification
+* message: phrase for the speech and visual notification
 
 For timed events:
-  title: short title for the window
-  time: the amount of time before the notification fires. These are set currently to 5 seconds less than the actual spell duration. Using urxvt allows the window to be minimised so that you get a nice countdown on your task bar in your window manager, other terminals may need tweaking here.
+
+* title: short title for the window
+* time: the amount of time before the notification fires. These are set currently to 5 seconds less than the actual spell duration. Using urxvt allows the window to be minimised so that you get a nice countdown on your task bar in your window manager, other terminals may need tweaking here.
+
 
 Examples:
 
