@@ -39,6 +39,7 @@ import os
 import subprocess
 import shlex
 import yaml
+import traceback
 
 from os import listdir
 from os.path import isfile, join
@@ -48,7 +49,7 @@ from config import *
 from dep_check import *
 from character_list import *
 from message_generator import MessageGenerator
-from actions_map import ActionsMap
+from actions_mapper import ActionsMapper
 
 
 #### MAIN PROGRAM ####
@@ -97,7 +98,7 @@ LOGPATH = "eqlog_%s_%s.txt" % (CHARACTER, SERVER)
 LOGFILE = EQHOME+LOGPATH
 DepCheck.verifyLogFile(CHARACTER, LOGFILE)
 
-ACTIONS_MAP = ActionsMap('actions.yml').actions
+ACTIONS_MAP = ActionsMapper('actions.yml').actions
 
 try:
 
@@ -117,9 +118,8 @@ try:
                 time.sleep(0.1)
                 continue
 
-            print("DEBUG: "+line)
             action = generator.action_for(line)
-            print("DEBUG: "+action)
+            # print("DEBUG: "+ line + "...RESULT: " +str(action))
             if action:
                 action.run()
 
@@ -129,8 +129,11 @@ try:
 except KeyboardInterrupt:
     print("")
     print("Closing The EverQuest Alerter")
+    raise
+
+except Exception:
+    traceback.print_exc()
 
 finally:
-    # close log file and exit
     f.close()
     sys.exit()
