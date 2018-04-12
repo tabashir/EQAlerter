@@ -2,6 +2,7 @@
 A Python based audio trigger alert system for EverQuest.  With Discord Bot support!
 
 Author: Dr. Ronny Bull (A.K.A. Cubber on http://eqemultor.org)
+        Extended by Jez McKinley (A.K.A. Tabashir on TAKP and P1999)
 
 Python Version: 3.5
 
@@ -13,9 +14,12 @@ Purpose:  This program is intended to run on a Linux system running 'EverQuest' 
           When running the program will parse your EverQuest chat log file for key phrases
           contained in the Config.py file and trigger alerts using the flite TTS engine.  
 
-Dependencies: Python 3.5 and CMU Flite text to speech engine
-	      Discord version requires discord.py library: 
-              python3 -m pip install --user -U discord.py[voice]
+Dependencies: * Python 3.5 
+              * CMU Flite text to speech engine for audio notifications
+              * urxvt terminal emulator for visual notifications
+              * Discord version requires discord.py library: 
+                  python3 -m pip install --user -U discord.py[voice]
+
 
 IMPORTANT: Verify that your 'eqclient.ini' file contains the following line: LOG=TRUE, and that your game path is setup properly in Config.py.
 
@@ -71,11 +75,69 @@ A. EQAlerter supports the following raid events:
 	- Anniversary(The Plane of War: 15th anniversary, 17th Anniversary raid - Hates Fury: Seventeen Pieces of Silver)
 
 
-Q. What other triggers are supported?
-
-A. All forms of invisibility dropping as well as feign death failures and breaks.
-
-
 Q. What is GuildChat-Discord.py?
 
 A. A stand-alone program created to relay guild chat messages from a character log file to a private guild chat channel on Discord.  
+
+Q. What other triggers are supported?
+
+A. Current implemented list:
+
+* All forms of invisibility dropping as well 
+* Feign death failures and breaks.
+* Spell worn off
+* Root/Charm breaks
+* Mez breaks
+
+Q. What other features does it have?
+A. Timers and Ignores
+
+Timers are so that you know when to refresh a spell, for example, Mez, Fascinate etc. On a mez landing, it will pop up a separate console window (currently set to urxvt) that will count down, then issue an audible warning and notification to refresh. 
+
+Ignores are so that you can get an alert on a class of events, but don't want a subset of them to alert you. For example, you want a tell from a player to notify, but don't want one when a vendor 'tells you that will be 10 plat'
+
+Q. How do I add my own notifications?
+A. All messages and notifications are editable in the actions.yml file. This should be fairly self explanatory.
+
+An action is in the following format:
+
+For all events:
+NAME: Just an identifier, but will need to be unique, othewise the last one in the file will prevail
+  expect: This is the phrase to trigger the event. If you want it to only trigger with your character name, use the tag {CHARACTER} where you would expect to see it in the phrase.
+  ignore: an array (inside []) of phrases that will mean you don't get a notification
+  message: phrase for the speech and visual notification
+
+For timed events:
+  title: short title for the window
+  time: the amount of time before the notification fires. These are set currently to 5 seconds less than the actual spell duration. Using urxvt allows the window to be minimised so that you get a nice countdown on your task bar in your window manager, other terminals may need tweaking here.
+
+Examples:
+
+SHADOW4:
+  expect: "aims a straight cut at {CHARACTER}"
+  message: "Move out of range"
+
+TELL:
+  message: "Incoming Tell"
+  expect: "tells you,"
+  ignore: [
+    "That'll be",
+    "I'll give you",
+  ]
+
+MEZ:
+  expect: "has been mesmerized"
+  title: "Mezmerize"
+  message: "Mesmerize warning"
+  time: 19
+
+
+
+TODO:
+* Make it automatically detect log folder given the EQ folder (TAKP does not use Logs subfolder)
+* Config override file (so that it does not need checking in to git)
+* Actions should have class structure
+* Ability to configure whether an action is audio, visual or both from the config file
+* Decent folder structure (src/test etc). This was Jez's first major python code and could not work out how to nicely load includes from other folders!
+* Tests around the main script
+* configure in config (not hard code) the terminal and window parameters for the delayed notification
