@@ -74,12 +74,12 @@ for c in EQHOMES:
 
 # ask user to pick EQ folder to control from list
 FOLDERNUM = input("\n\nEnter the number corresponding to the EQ folder from the list: ")
-EQHOME = os.path.expanduser(EQHOMES[int(FOLDERNUM)])
+eq_home = os.path.expanduser(EQHOMES[int(FOLDERNUM)])
 
-DepCheck.verifyLogging(EQHOME)
+DepCheck.verifyLogging(eq_home)
 
 # get character info
-ALLFILES = [u for u in listdir(EQHOME) if isfile(join(EQHOME, u))]
+ALLFILES = [u for u in listdir(eq_home) if isfile(join(eq_home, u))]
 sub = "UI_"
 UIFILES = [s for s in ALLFILES if sub in s]
 
@@ -103,23 +103,22 @@ for c in CHARLIST:
 
 # ask user to pick character to control from list
 CHARNUM = input("\n\nEnter the number of the character's log file that you would like to monitor from the list: ")
-CHARACTER = CHARLIST.getName(CHARNUM)
-SERVER = CHARLIST.getServer(CHARNUM)
+character = CHARLIST.getName(CHARNUM)
+server = CHARLIST.getServer(CHARNUM)
 
 # generate logfile path
-LOGPATH = "eqlog_%s_%s.txt" % (CHARACTER, SERVER) 
-# LOGFILE = EQHOME+LOGPATH
-LOGFILE = DepCheck.getLogFile(EQHOME, CHARACTER, LOGPATH)
+log_path = "eqlog_%s_%s.txt" % (character, server) 
+log_file = DepCheck.getLogFile(eq_home, character, log_path)
 
-ACTIONS_MAP = ActionsMapper('actions.yml').actions
+actions_map = ActionsMapper('actions.yml').actions
 
 try:
 
     # open log file
-    with open(LOGFILE, 'r+') as f:
+    with open(log_file, 'r+') as f:
         # move to the end of the file
         f.seek(0,2)
-        generator = MessageGenerator(EQHOME, CHARACTER, ACTIONS_MAP)
+        generator = MessageGenerator(eq_home, character, actions_map)
         # loop over each new line of the file
         # act on keywords from chat messages parsed from logfile
         # if no new line, wait for short while before re-checking
