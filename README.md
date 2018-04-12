@@ -113,6 +113,7 @@ For timed events:
 
 Examples:
 
+```yaml
 SHADOW4:
   expect: "aims a straight cut at {CHARACTER}"
   message: "Move out of range"
@@ -130,7 +131,7 @@ MEZ:
   title: "Mezmerize"
   message: "Mesmerize warning"
   time: 19
-
+```
 
 
 TODO:
