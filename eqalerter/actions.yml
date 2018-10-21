@@ -887,6 +887,10 @@ OUT_OF_RANGE:
   message: "Range"
   expect: "out of range"
 
+MISSED_NOTE:
+  message: "Miss note"
+  expect: "You miss a note"
+
 LORE_ITEM:
   message: "Duplicate"
   expect: "already have that Lore Item on your person or in the bank"
