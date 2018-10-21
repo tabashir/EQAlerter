@@ -7,8 +7,9 @@
 # You can use absolute paths or use ~ for home folder
 # Make sure you use a trailing slash / 
 EQHOMES = [
-    "~/.PlayOnLinux/wineprefix/TAKP_1/drive_c/Everquest/",
-    "~/.PlayOnLinux/wineprefix/TAKP_1/drive_c/Everquest_2/",
+    "~/programs/takp/drive_e/TAKP/",
+    "~/.PlayOnLinux/wineprefix/takp/drive_c/Everquest/",
+    "~/.PlayOnLinux/wineprefix/takp/drive_c/Everquest_2/",
     "~/.PlayOnLinux/wineprefix/EQ/drive_c/Everquest/",
     "~/.PlayOnLinux/wineprefix/EQ_Full/drive_c/EverQuest/"
 ]

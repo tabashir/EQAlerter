@@ -836,19 +836,19 @@ ROOTBREAK2:
   expect: "Your Grasping Roots spell has worn off"
 
 ALERT_HAIL:
-  message: "Hail {CHARACTER}"
-  expect: 'Hail, '
+  message: "Hail"
+  expect: 'Hail, {CHARACTER}'
 
 INVITE:
-  message: "Invite {CHARACTER}"
+  message: "Invite"
   expect: ' invites you to join a'
 
 LOST_FOLLOW1:
-  message: 'Not Following'
+  message: 'No Follow'
   expect: 'canceling auto-follow'
 
 LOST_FOLLOW2:
-  message: 'Not Following'
+  message: 'No Follow'
   expect: 'You are no longer auto-following'
 
 DROPPED_ITEM1:
@@ -864,11 +864,11 @@ DROPPED_ITEM3:
   expect: 'just dropped your'
 
 REAGENT_FAIL:
-  message: 'Missing component'
+  message: 'Component'
   expect: 'are missing some required components'
 
 NO_MANA:
-  message: "Out of Mana"
+  message: "No Mana"
   expect: 'Insufficient Mana to cast this spell'
 
 SPELL_RESIST:
@@ -883,9 +883,25 @@ SPELL_INTERRUPT:
   message: "Interrupted"
   expect: "spell is interrupted"
 
+OUT_OF_RANGE:
+  message: "Range"
+  expect: "out of range"
+
 LORE_ITEM:
-  message: "Duplicate lore item"
-  expect: 'already have that Lore Item on your person or in the bank'
+  message: "Duplicate"
+  expect: "already have that Lore Item on your person or in the bank"
+
+LORE_ITEM_2:
+  message: "Duplicate"
+  expect: "You cannot loot this Lore Item.  You already have one"
+
+INSTRUMENT_EQUIPPED_1:
+  message: 'Weapon'
+  expect: "You punch"
+
+INSTRUMENT_EQUIPPED_2:
+  message: 'Weapon'
+  expect: "Tabalature punches"
 
 TELL:
   message: "Incoming Tell"
