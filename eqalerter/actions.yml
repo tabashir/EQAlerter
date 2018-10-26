@@ -707,10 +707,90 @@ VELAZUL2:
 ##### END EoK #####
 
 
-##### START GENERAL UTILITY #####
+##### SPELLS and EFFECTS #####
 
-## adapted from http://www.icynic.com/~don/EQ/triggers/
+### Mob spells
+## CONTROL
+# You have been charmed
+# You have been summoned!
+# Your mind fills with fear
+# You are stunned
+# You have been knocked unconscious!
 
+ME_CHARMED:
+  message: "Charmed you"
+  expect: "You have been charmed"
+
+ME_SUMMONED:
+  message: "Summoned you"
+  expect: "You have been summoned"
+
+ME_FEARED:
+  message: "Feared you"
+  expect: "Your mind fills with fear"
+
+ME_STUNNED:
+  message: "Stunned you"
+  expect: "You are stunned"
+
+ME_MEZ:
+  expect: "You have been mesmerized"
+  message: "Mezzed You"
+
+ME_FASCINATE:
+  expect: "You have been fascinated"
+  message: "Fascinated you"
+
+ME_ENTHRALL:
+  expect: "You have been enthralled"
+  message: "Enthralled you"
+
+ME_ENTRANCE:
+  expect: "You have been entranced"
+  message: "Entranced you"
+
+ME_DAZZLE:
+  expect: "You have been dazzled"
+  message: "Dazzled you"
+
+# For dual boxing, you probably know this otherwise!
+ME_UNCONSCIOUS:
+  message: "Unconscious"
+  expect: "You have been knocked unconscious"
+
+
+## DAMAGE
+# You have been diseased
+# You have been force struck
+# You have been lacerated
+# You have been poisoned
+# You have been smitten
+# You have been sprayed with skunk musk
+# You have been struck down by wrath
+# You have been thunderstruck
+
+ME_FORCE_STRUCK:
+  message: "Force Struck you"
+  expect: "You have been force struck"
+
+ME_DISEASED:
+  message: "Diseased you"
+  expect: "You have been diseased"
+
+ME_POISONED:
+  message: "Poisoned you"
+  expect: "You have been poisoned"
+
+ME_WRATHED:
+  message: "Struck by Wrath"
+  expect: "You have been struck down by wrath"
+
+ME_THUNDERSTRUCK:
+  message: "Thunderstruck you"
+  expect: "You have been thunderstruck"
+
+
+### Bad things happening
 ## Invis dropped
 APPEARING:
   message: "Invisibility Drop"
@@ -744,13 +824,9 @@ VISIBLE7:
   message: "Invisibility Drop"
   expect: "Your body shifts into phase"
 
-LOST_FOLLOW1:
-  message: "Not Following"
-  expect: "canceling auto-follow"
-
-LOST_FOLLOW2:
-  message: "Not Following"
-  expect: "You are no longer auto-following"
+VISIBLE8:
+  message: "Not Hidden"
+  expect: "are no longer hidden"
 
 ## Feign Death
 FALLEN:
@@ -768,6 +844,8 @@ FDRESIST:
 FDCLEAR:
   message: "you can get up now"
   expect:  "Your enemies have forgotten you"
+
+## Effects on Mobs
 
 MEZ:
   expect: "has been mesmerized"
@@ -835,6 +913,9 @@ ROOTBREAK2:
   message: "Root break"
   expect: "Your Grasping Roots spell has worn off"
 
+##### START GENERAL UTILITY #####
+### adapted from http://www.icynic.com/~don/EQ/triggers/
+
 ALERT_HAIL:
   message: "Hail"
   expect: 'Hail, {CHARACTER}'
@@ -843,13 +924,17 @@ INVITE:
   message: "Invite"
   expect: ' invites you to join a'
 
+LEVITATE_END:
+  message: "Levitate End"
+  expect: "can no longer levitate"
+
 LOST_FOLLOW1:
-  message: 'No Follow'
-  expect: 'canceling auto-follow'
+  message: "Not Following"
+  expect: "canceling auto-follow"
 
 LOST_FOLLOW2:
-  message: 'No Follow'
-  expect: 'You are no longer auto-following'
+  message: "Not Following"
+  expect: "You are no longer auto-following"
 
 DROPPED_ITEM1:
   message: 'Item dropped'
@@ -865,7 +950,7 @@ DROPPED_ITEM3:
 
 REAGENT_FAIL:
   message: 'Component'
-  expect: 'are missing some required components'
+  expect: 'missing some required components'
 
 NO_MANA:
   message: "No Mana"
@@ -899,13 +984,13 @@ LORE_ITEM_2:
   message: "Duplicate"
   expect: "You cannot loot this Lore Item.  You already have one"
 
-INSTRUMENT_EQUIPPED_1:
-  message: 'Weapon'
-  expect: "You punch"
-
-INSTRUMENT_EQUIPPED_2:
-  message: 'Weapon'
-  expect: "Tabalature punches"
+# INSTRUMENT_EQUIPPED_1:
+#   message: 'Weapon'
+#   expect: "You punch"
+#
+# INSTRUMENT_EQUIPPED_2:
+#   message: 'Weapon'
+#   expect: "Tabalature punches"
 
 TELL:
   message: "Incoming Tell"
