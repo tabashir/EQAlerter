@@ -1010,3 +1010,71 @@ TELL:
 
 ##### END GENERAL UTILITY #####
 
+##### BUFF TIMERS #####
+
+# 24 Mins
+AANYAS_QUICKENING:
+  expect: "experiences a quickening"
+  message: "quickening going"
+  time: 1420
+  title: "speed"
+
+# 27 Mins
+BOON_CLEAR_MIND:
+  expect: "cool breeze slips through your mind"
+  message: "clarity dropping"
+  time: 1600
+  title: "boon"
+
+# 35 Mins
+CLARITY_II:
+  expect: "soft breeze slips through your mind"
+  message: "clarity dropping"
+  time: 2080
+  title: "c2"
+
+# 36 Mins
+GROUP_RESIST_MAGIC:
+  expect: "feel protected from magic"
+  message: "resist magic dropping"
+  time: 2140
+  title: "GRM"
+
+
+##### BUFF FADES #####
+
+CLARITY:
+  expect: "cool breeze fades"
+  message: "clarity gone"
+  title: "clarity"
+
+INTELLECTUAL:
+  expect: "intellectual advancement fades"
+  message: "intellect gone"
+  title: "intellect"
+
+GOM:
+  expect: "gift of magic fades"
+  message: "gift gone"
+  title: "gift"
+
+SHIELDING:
+  expect: "shielding fades"
+  message: "shielding gone"
+  title: "shielding"
+
+RUNE:
+  expect: "shimmer of runes fades"
+  message: "rune gone"
+  title: "rune"
+
+FEEDBACK:
+  expect: "energy flames die down"
+  message: "feedback gone"
+  title: "feedback"
+
+RESIST_MAGIC:
+  expect: "our protection fades"
+  message: "resist magic gone"
+  title: "resist magic"
+
