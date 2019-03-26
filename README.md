@@ -150,3 +150,6 @@ TODO:
 * Tests around the main script
 * configure in config (not hard code) the terminal and window parameters for the delayed notification
 * add optional character name into notification for use if running multiple instances
+* count up timer for events like charms where duration is unpredictable
+* dashboard for running events
+* ignore multiple repeat events within a given interval

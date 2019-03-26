@@ -789,6 +789,9 @@ ME_THUNDERSTRUCK:
   message: "Thunderstruck you"
   expect: "You have been thunderstruck"
 
+ME_HIT:
+  message: "ow"
+  expect: "YOU for"
 
 ### Bad things happening
 ## Invis dropped
@@ -1033,13 +1036,13 @@ CLARITY_II:
   time: 2080
   title: "c2"
 
-# 36 Mins
-GROUP_RESIST_MAGIC:
-  expect: "feel protected from magic"
-  message: "resist magic dropping"
-  time: 2140
-  title: "GRM"
-
+# # 36 Mins
+# GROUP_RESIST_MAGIC:
+#   expect: "feel protected from magic"
+#   message: "resist magic dropping"
+#   time: 2140
+#   title: "GRM"
+#
 
 ##### BUFF FADES #####
 
