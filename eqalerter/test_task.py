@@ -34,7 +34,7 @@ class TestTask(unittest.TestCase):
 
     def test_delayed_message_command_line(self):
         unit = DelayedMessage(42, "my message description", "msgtitle")
-        expected = 'urxvt -iconic -geometry 15x1 -bg red -fg white -title msgtitle -e python stop_watch.py 42 "my message description" 1'
+        expected = 'urxvt -iconic -geometry 15x1 -bg red -fg white -title msgtitle -e python stop_watch.py 42 "my message description" 1 "msgtitle"'
         self.assertEqual(expected, unit.command)
 
 if __name__ == '__main__':

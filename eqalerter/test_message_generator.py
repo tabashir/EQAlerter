@@ -51,7 +51,7 @@ class TestMessageGenerator(unittest.TestCase):
         self.assertEqual(19, task.timeout)
         self.assertEqual('Mesmerize Warning', task.message)
         self.assertEqual('Mez', task.title)
-        expected_command = 'urxvt -iconic -geometry 15x1 -bg red -fg white -title Mez -e python stop_watch.py 19 "Mesmerize Warning" 1'
+        expected_command = 'urxvt -iconic -geometry 15x1 -bg red -fg white -title Mez -e python stop_watch.py 19 "Mesmerize Warning" 1 "Mez"'
         self.assertEqual(expected_command, task.command)
 
 if __name__ == '__main__':

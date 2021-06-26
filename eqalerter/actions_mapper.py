@@ -16,11 +16,10 @@ class ActionsMapper:
         self.actions = {}
         with open(config_file, 'r') as stream:
             try:
-                action_map = yaml.load(stream).items()
+                action_map = yaml.safe_load(stream).items()
                 for key,value in action_map:
                     # print("DEBUG_MAPPER: %s=%s" % (key, value))
                     self.actions[key] = Action(value)
 
             except yaml.YAMLError as exc:
                 print(exc)
-
